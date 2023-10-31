@@ -1,0 +1,12 @@
+numpy
+tqdm
+glob2
+SimpleITK
+pillow
+pydicom
+vtk
+vedo
+scikit-image
+opencv-python
+pytest-shutil
+ultralytics
