@@ -16,7 +16,8 @@ setup(
         'scikit-image',
         'opencv-python',
         'pytest-shutil',
-        'ultralytics'
+        'ultralytics',
+        'scikit-learn'
         # other libraries
     ],
 )

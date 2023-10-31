@@ -7,5 +7,6 @@ pydicom==2.4.3
 vtk==9.2.6
 vedo==2023.4.6
 scikit-image==0.22.0
+scikit-learn==1.1.2
 opencv-python==4.8.1.78
 pytest-shutil
