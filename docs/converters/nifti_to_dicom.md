@@ -35,7 +35,7 @@ Converting a NIFTI file to a DICOM series involves:
 
 ### Class Initialization
 
-```
+```Python
 from pycad.converters import NiftiToDicomConverter
 
 converter = NiftiToDicomConverter()
