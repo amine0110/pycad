@@ -1,5 +1,6 @@
-![alt text](https://github.com/amine0110/pycad/blob/main/assets/pycad_cover.png?raw=true)
+# PYCAD Medical Imaging Preprocessing Utilities
 
+![header](https://capsule-render.vercel.app/api?type=waving&color=ffc800&height=300&section=header&text=PYCAD%20&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Medical%20Imaging%20Preprocessing%20Utilities&descAlignY=51&descAlign=62)
 
 
 
