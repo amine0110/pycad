@@ -23,19 +23,19 @@ from pycad.converters import Nifti2StlConverter, NiftiToPngConverter, NiftiToDic
 ## Usage
 Here is a brief rundown of how to use each converter.
 
-**Nifti2StlConverter**
+#### **Nifti2StlConverter**
 
 Converts NIFTI files to STL for 3D printing or further processing. Supports single and multi-class conversions.
 
 [Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/nifti_to_stl.md)
 
-**NiftiToPngConverter**
+#### **NiftiToPngConverter**
 
 Converts NIFTI files to PNG images for easy visualization and sharing.
 
 [Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/nifti_to_png.md)
 
-**NiftiToDicomConverter**
+#### **NiftiToDicomConverter**
 
 Converts NIFTI files to DICOM for compatibility with most of the medical imaging software.
 
