@@ -22,11 +22,11 @@ class Nifti2StlConverter:
 
     ### Example of usage:
     ```
-    from pycad.preprocess import converters
+    from pycad.converters import Nifti2StlConverter
 
     path_to_nifti = 'path to the input nifti file'
     path_to_stl = 'path to save the stl file' # dont need to add the .stl neither the file name
-    converter = converters.Nifti2StlConverter(path_to_nift, path_to_stl)
+    converter = Nifti2StlConverter(path_to_nift, path_to_stl)
 
     converter.nifti2stl_vtk()
     # you can do the same thing for the other types of converters from nifti to stl.

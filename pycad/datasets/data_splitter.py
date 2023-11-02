@@ -41,7 +41,7 @@ class DataSplitter:
 
     ### Example of usage:
     ```
-    from pycad.preprocess.utils import DataSplitter
+    from pycad.datasets import DataSplitter
 
     input_dir_img = 'path to the input folder for the images'
     input_dir_labels = 'path to the input folder for the labels'

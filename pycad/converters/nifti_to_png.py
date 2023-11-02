@@ -18,12 +18,12 @@ class NiftiToPngConverter:
 
     ### Example of usage:
     ```
-    from pycad.preprocess import converters
+    from pycad.converters import NiftiToPngConverter
 
     image_paths = 'path ot images'
     seg_paths = 'path to segmentations'
     output_path = 'path to save the outputs'
-    converter = converters.NiftiToPngConverter(max_v=200, min_v=-200)
+    converter = NiftiToPngConverter(max_v=200, min_v=-200)
 
     converter.run(image_paths, seg_paths, output_path)
     

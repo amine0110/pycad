@@ -15,6 +15,9 @@ class NIFTIVisualizer:
     Example Usage:
     ```
     # Visualize a single NIfTI file with default settings
+
+    from pycad.visualization import NIFTIVisualizer
+    
     visualizer = NIFTIVisualizer("./data/sample1.nii")
     visualizer.visualize()
 

@@ -15,6 +15,8 @@ class STLVisualizer:
     Example Usage:
     
     # Single STL file
+    from pycad.visualization import STLVisualizer
+
     visualizer = STLVisualizer("./data/output_file.stl")
     visualizer.visualize()
 

@@ -15,11 +15,11 @@ class NiftiToDicomConverter:
     The nifti to dicom converter can be used to convert one or multiple nifti files into dicom series. It can be called `from pycad.converters import NiftiToDicomConverter`\n
 
     ```
-    from pycad.preprocess import converters
+    from pycad.converters import NiftiToDicomConverter
 
     in_dir = 'path to one nifti file'
     out_dir = 'path to the folder to save the dicom series'
-    converter = converters.NiftiToDicomConverter()
+    converter = NiftiToDicomConverter()
 
     converter.nifti2dicom_1file(in_dir, out_dir) # to convert one nifti file, and you can do the same thing with multiple nifti files using nifti2dicom_mfile
 

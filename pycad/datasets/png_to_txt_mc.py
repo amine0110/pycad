@@ -26,11 +26,11 @@ class PngToTxtConverterMC:
 
     ### Example of usage:
     ```
-    from pycad.preprocess import converters
+    from pycad.datasets import PngToTxtConverterMC
 
     input_folder = 'path to the mask images'
     output_folder = 'path to save the generated txt files'
-    converter = converters.PngToTxtConverterMC(input_folder, output_folder, 0.001) # lets use a coeff of .1%
+    converter = PngToTxtConverterMC(input_folder, output_folder, 0.001) # lets use a coeff of .1%
 
     converter.run()
 

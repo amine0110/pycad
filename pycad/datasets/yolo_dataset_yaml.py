@@ -15,7 +15,7 @@ class YOLODatasetYaml:
     To create the dataset.yaml file, you need to call the method `create_yaml` and also give the path to the location to save the yaml file.\n
     \n\n
     #### Example usage:
-    from pycad.preprocess.utils import YOLODatasetYaml
+    from pycad.datasets import YOLODatasetYaml
 
     config = YOLODatasetYaml("path/to/train", "path/to/valid", 3, "t1", "t2", "t3")\n
     config.create_yaml("dataset.yaml")
