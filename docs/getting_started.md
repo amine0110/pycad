@@ -52,7 +52,19 @@ source pycad_env/bin/activate  # On Windows, use `pycad_env\Scripts\activate`
 Then, proceed with either of the above installation options.
 
 ## Basic Usage
-to be completed
+
+Multiple STL visualization using the visualization module of PYCAD:
+
+```Python
+from pycad.visualization import STLVisualizer
+from glob import glob
+
+stl_paths = glob("path/to/*.stl")
+
+
+visualizer = STLVisualizer(stl_paths)
+visualizer.visualize()
+```
 
 ## Getting Help
 - **Documentation**: Visit [PYCAD Documentation](https://github.com/amine0110/pycad/tree/main/docs) for comprehensive guides and API references.
