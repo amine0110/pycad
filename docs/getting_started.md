@@ -48,6 +48,11 @@ Before installing the library, it's often recommended to create a virtual enviro
 python -m venv pycad_env
 source pycad_env/bin/activate  # On Windows, use `pycad_env\Scripts\activate`
 ```
+Or
+```bash
+conda create -n my_env python=3.10
+conda activate my_env
+```
 
 Then, proceed with either of the above installation options.
 
