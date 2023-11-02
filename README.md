@@ -25,6 +25,8 @@ Welcome to PYCAD, a comprehensive library designed to simplify and streamline me
    pip install -r requirements.txt
    ```
 
+For more installation instructions, please see [this](https://github.com/amine0110/pycad/blob/main/docs/getting_started.md).
+
 ## Features & Usage
 
 - **Image File Conversion**: Between NIFTI and DICOM formats.
