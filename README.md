@@ -1,5 +1,9 @@
 ![PYCAD](https://capsule-render.vercel.app/api?type=soft&color=ffc800&text=PYCAD%20-%20Redefining%20Medical%20Imaging&fontSize=40&animation=twinkling)
 
+<p align="center"> 
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/amine0110%2Fpycad/count.svg" />
+</p>
 
 ### Links to Documentation
 - [Converter](https://pycad.notion.site/Converters-9fa56b33415f4078b90251c2f433faa7?pvs=4)
