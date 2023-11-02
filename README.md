@@ -1,6 +1,4 @@
-# PYCAD Medical Imaging Preprocessing Utilities
-
-![header](https://capsule-render.vercel.app/api?type=waving&color=ffc800&height=300&section=header&text=PYCAD%20&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Medical%20Imaging%20Preprocessing%20Utilities&descAlignY=51&descAlign=62)
+![PYCAD](https://capsule-render.vercel.app/api?type=soft&color=ffc800&text=PYCAD%20-%20Redefining%20Medical%20Imaging&fontSize=40&animation=twinkling)
 
 
 ### Links to Documentation
