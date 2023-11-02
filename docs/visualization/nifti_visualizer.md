@@ -34,7 +34,7 @@ def visualize(self):
 
 ### Single NIfTI File
 
-```
+```Python
 from pycad.visualization import NIFTIVisualizer
 
 visualizer = NIFTIVisualizer("./data/sample1.nii")
