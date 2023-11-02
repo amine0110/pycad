@@ -4,3 +4,4 @@
 
 
 from .stl_visualizer import STLVisualizer
+from .nifti_visualizer import NIFTIVisualizer
