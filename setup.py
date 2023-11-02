@@ -20,4 +20,9 @@ setup(
         'scikit-learn==1.1.2'
         # other libraries with their versions
     ],
+    entry_points={
+        'console_scripts': [
+            'pycad=pycad.cli:main',
+        ],
+    },
 )
