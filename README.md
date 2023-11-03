@@ -65,7 +65,4 @@ For business inquiries, please reach out to us at:
 
 
 ---
-<p align="center"> 
-  Visitor count<br>
-  <img src="https://profile-counter.glitch.me/amine0110%2Fpycad/count.svg" />
-</p>
+
