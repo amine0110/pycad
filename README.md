@@ -6,7 +6,7 @@
 
 Welcome to PYCAD, a comprehensive library designed to simplify and streamline medical imaging tasks. From data preprocessing to advanced visualization, PYCAD empowers professionals, researchers, and enthusiasts to harness the power of modern algorithms and techniques with ease.
 
-**🔜 Coming Soon**: We're actively working on enhancing the PYCAD experience for our users. Stay tuned for a comprehensive suite of tutorials covering all facets of the library and an interactive documentation chatbot, designed to promptly answer your questions about using PYCAD.
+**🔜 Coming Soon**: We're actively working on enhancing the PYCAD experience for our users. Stay tuned for a comprehensive suite of tutorials covering all facets of the library.
 
 
 ## Installation
