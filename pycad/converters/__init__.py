@@ -6,3 +6,4 @@
 from .nifti_to_dicom import NiftiToDicomConverter
 from .nifti_to_png import NiftiToPngConverter
 from .nifti_to_stl import Nifti2StlConverter
+from .dicom_to_nifti import DicomToNiftiConverter
