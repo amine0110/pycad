@@ -5,6 +5,11 @@ Welcome to the converters folder! This package is part of the PYCAD library, des
 1. NIFTI to STL (`Nifti2StlConverter`)
 2. NIFTI to PNG (`NiftiToPngConverter`)
 3. NIFTI to DICOM (`NiftiToDicomConverter`)
+4. DICOM to NIFTI (`DicomToNiftiConverter`)
+5. DICOM to NRRD (`DicomToNrrdConverter`)
+6. NIFTI to NRRD (`NiftiToNrrdConverter`)
+7. NRRD to DICOM (`NrrdToDicomConverter`)
+8. NRRD to NIFTI (`NrrdToNiftiConverter`)
 
 ## Installation
 To install the PYCAD library, run the following command:
@@ -40,6 +45,36 @@ Converts NIFTI files to PNG images for easy visualization and sharing.
 Converts NIFTI files to DICOM for compatibility with most of the medical imaging software.
 
 [Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/nifti_to_dicom.md)
+
+#### **DicomToNiftiConverter**
+
+Convert DICOM series to NIFTI files.
+
+[Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/dicom_to_nifti.md)
+
+#### **DicomToNrrdConverter**
+
+Convert DICOM series to NRRD files.
+
+[Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/dicom_to_nrrd.md)
+
+#### **NiftiToNrrdConverter**
+
+Convert NIFTI files into NRRD files.
+
+[Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/nifti_to_nrrd.md)
+
+#### **NrrdToDicomConverter**
+
+Convert NRRD files into DICOM series.
+
+[Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/nrrd_to_dicom.md)
+
+#### **NrrdToNiftiConverter**
+
+Convert NRRD files into NIFTI files.
+
+[Detailed Documentation](https://github.com/amine0110/pycad/blob/main/docs/converters/nrrd_to_nifti.md)
 
 ## File Types
 - ***NIFTI***: Mostly used for storing volumetric data and meta-information. Common in research settings.
