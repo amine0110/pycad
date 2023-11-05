@@ -37,7 +37,7 @@ For more installation instructions, please see [this](https://github.com/amine01
 - **Data Preprocessing**: Including data splitting and annotation conversion.
 - **Dataset Creation**: Configurations for YOLOv8.
 
-For detailed usage and examples, refer to the [tutorials](./tutorials) (*coming soon*) directory and [documentation](./docs).
+For detailed usage and examples, refer to the [tutorials](./tutorials) directory and [documentation](./docs).
 
 ## Contributions & Support
 
