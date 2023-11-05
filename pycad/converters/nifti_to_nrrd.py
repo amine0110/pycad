@@ -71,9 +71,3 @@ class NiftiToNrrdConverter:
         for nifti_file in nifti_files:
             self.convert_file(nifti_file, output_dir)
 
-# Example usage
-if __name__ == "__main__":
-    converter = NiftiToNrrdConverter()
-    input_path = r"C:\Users\amine\Documents\Personal\PYCAD\dataset\test_pycad_convert"  # Can be either a file or a directory
-    output_dir = r"C:\Users\amine\Documents\Personal\PYCAD\dataset\test_pycad_convert"
-    converter.convert(input_path, output_dir)
