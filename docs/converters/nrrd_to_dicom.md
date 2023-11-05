@@ -1,4 +1,4 @@
-# NrrdToDicomConverter
+# NrrdToDicomConverter Documentation
 
 The `NrrdToDicomConverter` class is designed to facilitate the conversion of NRRD (Nearly Raw Raster Data) files into DICOM (Digital Imaging and Communications in Medicine) series. This conversion is crucial in the medical imaging field where DICOM is the standard for handling, storing, processing, and transmitting medical images.
 
