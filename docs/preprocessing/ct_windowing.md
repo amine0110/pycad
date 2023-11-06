@@ -14,13 +14,13 @@ The windowing process is defined by two main parameters:
 
 - **Window Center (WC)**: This indicates the midpoint of the HU range. It's the HU value that will be mapped to the middle of the grayscale.
 
-The transformation of HU to grayscale pixel intensity \( I \) can be defined by the following equation:
+The transformation of HU to grayscale pixel intensity $I$ can be defined by the following equation:
 
-\[
-I(x, y) = \frac{HU(x, y) - (WC - \frac{WW}{2})}{WW} \times 255
-\]
 
-Where \( I(x, y) \) is the intensity of the pixel at position \( (x, y) \) in the output image, \( HU(x, y) \) is the original HU value of that pixel, \( WC \) is the window center, and \( WW \) is the window width.
+$I(x, y) = \frac{HU(x, y) - (WC - \frac{WW}{2})}{WW} \times 255$
+
+
+Where $I(x, y)$ is the intensity of the pixel at position $(x, y)$ in the output image, $HU(x, y)$ is the original HU value of that pixel, $WC$ is the window center, and $WW$ is the window width.
 
 The result of this equation is then clamped to the range [0, 255] to fit the grayscale range of pixel values.
 
