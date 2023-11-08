@@ -11,9 +11,9 @@ import logging
 from glob import glob
 import matplotlib.pyplot as plt
 
-class DICOMCTWindowing:
+class DicomCTWindowing:
     """
-    The class DICOMCTWindowing is used to apply windowing to DICOM CT images. 
+    The class DicomCTWindowing is used to apply windowing to DICOM CT images. 
     It can process a single series of DICOM files or multiple series in different folders.
 
     This class is useful for the CT scans that has blur or noise, it is so effective for these scenarios, you can checkout our demos.
@@ -25,13 +25,13 @@ class DICOMCTWindowing:
     
     ## Example of usage:
     ```Python
-    from pycad.preprocessing import DICOMCTWindowing
+    from pycad.preprocessing import DicomCTWindowing
     
     dicom_dir = "path/to/dicom/series"  # Directory with DICOM files.
     output_dir = "path/to/output"
     window_center = 40
     window_width = 400
-    converter = DICOMCTWindowing(window_center, window_width, visualize=True)
+    converter = DicomCTWindowing(window_center, window_width, visualize=True)
     converter.convert(dicom_dir, output_dir)
     ```
     """
@@ -41,7 +41,7 @@ class DICOMCTWindowing:
         self.window_width = window_width
         self.visualize = visualize
         # Initialize the logger
-        self.logger = logging.getLogger('DICOMCTWindowing')
+        self.logger = logging.getLogger('DicomCTWindowing')
         self.logger.setLevel(logging.INFO)
         handler = logging.StreamHandler()
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
