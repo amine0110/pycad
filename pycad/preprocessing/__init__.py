@@ -3,4 +3,5 @@
 # https://github.com/amine0110/pycad/blob/main/LICENSE
 
 
-from .dicom_ct_windowing import CTWindowing
+from .dicom_ct_windowing import DicomCTWindowing
+from .nifti_ct_windowing import NiftiCTWindowing
