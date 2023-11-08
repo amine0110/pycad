@@ -1,7 +1,7 @@
-# CTWindowing Documentation
+# DICOMCTWindowing Documentation
 ## Preprocessing DICOM CT Images with Windowing
 
-The `CTWindowing` class is designed to facilitate the preprocessing of DICOM CT (Computed Tomography) images by applying a technique known as windowing or level adjustment. This technique is critical in medical imaging, as it allows radiologists and medical AI systems to visualize different structures in the CT images more effectively.
+The `DICOMCTWindowing` class is designed to facilitate the preprocessing of DICOM CT (Computed Tomography) images by applying a technique known as windowing or level adjustment. This technique is critical in medical imaging, as it allows radiologists and medical AI systems to visualize different structures in the CT images more effectively.
 
 ![CT windowing](../../assets/ct_windowing.png?raw=true)
 
@@ -24,7 +24,7 @@ Where $I(x, y)$ is the intensity of the pixel at position $(x, y)$ in the output
 
 The result of this equation is then clamped to the range [0, 255] to fit the grayscale range of pixel values.
 
-## Features of CTWindowing
+## Features of DICOMCTWindowing
 - **Versatility**: Can process a single series or multiple series of DICOM files located in different folders.
 - **Customizable Windowing**: Allows the user to set the window width and center according to the anatomical structure of interest (e.g., lung, bone, brain).
 - **Visualization**: Optionally display an example slice before and after processing for quick quality assurance.
@@ -34,9 +34,9 @@ The result of this equation is then clamped to the range [0, 255] to fit the gra
 ### Initialization
 
 ```Python
-from pycad.preprocessing import CTWindowing
+from pycad.preprocessing import DICOMCTWindowing
 
-converter = CTWindowing(window_center, window_width, visualize=True)
+converter = DICOMCTWindowing(window_center, window_width, visualize=True)
 ```
 - `window_center`: The center of the window used for windowing.
 - `window_width`: The width of the window used for windowing.
@@ -58,4 +58,4 @@ converter.convert([dicom_dir1, dicom_dir2], output_dir)
 ```
 
 ## Integration
-The `CTWindowing` is designed to be a plug-and-play component in medical image preprocessing pipelines. It is especially suited for preparing datasets for machine learning models, where specific tissue visualization is crucial.
+The `DICOMCTWindowing` is designed to be a plug-and-play component in medical image preprocessing pipelines. It is especially suited for preparing datasets for machine learning models, where specific tissue visualization is crucial.
