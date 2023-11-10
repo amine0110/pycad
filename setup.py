@@ -8,6 +8,7 @@ setup(
     packages=find_packages(),
     description='A medical imaging library for Python',
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     url='https://pycad.co',
     project_urls={
         "Documentation": "https://pycad.co",
