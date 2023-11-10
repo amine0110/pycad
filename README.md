@@ -14,18 +14,7 @@ Welcome to PYCAD, a comprehensive library designed to simplify and streamline me
 1. **Clone the repository**:
    
    ```bash
-   git clone https://github.com/amine0110/pycad.git
-   ```
-2. **Walk to PYCAD**
-
-   ```bash
-   cd pycad
-   ```
-
-3. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
+   pip install pycad-medic
    ```
 
 For more installation instructions, please see [this](https://github.com/amine0110/pycad/blob/main/docs/getting_started.md).
