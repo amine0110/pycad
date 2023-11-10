@@ -1,9 +1,18 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pycad',
-    version='0.0.2',
+    name='pycad-medic',
+    version='0.0.3',
+    author='Mohammed El Amine Mokhtari',
+    author_email='mohammed@pycad.co',
     packages=find_packages(),
+    description='A medical imaging library for Python',
+    long_description=open('README.md').read(),
+    url='https://pycad.co',
+    project_urls={
+        "Documentation": "https://pycad.co",
+        "Source Code": "https://github.com/amine0110/pycad",
+    },
     install_requires=[
         'numpy==1.26.0',
         'tqdm==4.66.1',
