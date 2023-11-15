@@ -12,10 +12,17 @@ Ensure you have Python 3.x installed. You can check your Python version using th
 You can directly install PYCAD from GitHub using pip:
 
 ```bash
+pip install pycad-medic
+```
+
+### Option 2: Install using pip from source
+You can directly install PYCAD from GitHub using pip:
+
+```bash
 pip install git+https://github.com/amine0110/pycad.git
 ```
 
-### Option 2: Install by Cloning the Repository
+### Option 3: Install by Cloning the Repository
 #### 1. Clone the Repository:
 
 Navigate to your desired directory and run:
