@@ -39,6 +39,11 @@ class NiftiToPngConverter:
         This function prepares the image data for conversion.
         '''
         if data_type == 'vol':
+            if self.max_v: HOUNSFIELD_MAX = int(float(self.max_v))
+            else: HOUNSFIELD_MAX = np.max(image_data)
+            if self.min_v:HOUNSFIELD_MIN = int(float(self.min_v))
+            else: HOUNSFIELD_MIN = np.min(image_data)
+
             HOUNSFIELD_MIN = int(float(self.min_v))
             HOUNSFIELD_MAX = int(float(self.max_v))
             HOUNSFIELD_RANGE = HOUNSFIELD_MAX - HOUNSFIELD_MIN
