@@ -44,8 +44,6 @@ class NiftiToPngConverter:
             if self.min_v:HOUNSFIELD_MIN = int(float(self.min_v))
             else: HOUNSFIELD_MIN = np.min(image_data)
 
-            HOUNSFIELD_MIN = int(float(self.min_v))
-            HOUNSFIELD_MAX = int(float(self.max_v))
             HOUNSFIELD_RANGE = HOUNSFIELD_MAX - HOUNSFIELD_MIN
 
             image_data[image_data < HOUNSFIELD_MIN] = HOUNSFIELD_MIN
