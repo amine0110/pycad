@@ -3,3 +3,4 @@
 # https://github.com/amine0110/pycad/blob/main/LICENSE
 
 from .liver_datasets import LiverDataset
+from .adrenal_gland_right_dataset import AdrenalGlandRightDataset
