@@ -5,3 +5,5 @@
 from .liver_datasets import LiverDataset
 from .adrenal_gland_right_dataset import AdrenalGlandRightDataset
 from .adrenal_gland_left_dataset import AdrenalGlandLeftDataset
+from .aorta_dataset import AortaDataset
+from .atrial_appendage_left_dataset import AtrialAppendageLeftDataset
