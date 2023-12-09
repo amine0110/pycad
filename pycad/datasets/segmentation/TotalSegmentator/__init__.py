@@ -9,3 +9,5 @@ from .aorta_dataset import AortaDataset
 from .atrial_appendage_left_dataset import AtrialAppendageLeftDataset
 from .autochthon_left_dataset import AutochthonLeftDataset
 from .brachiocephalic_trunk_dataset import BrachiocephalicTrunkDataset
+from .brachiocephalic_vein_left_dataset import BrachiocephalicVeinLeftDataset
+from .brachiocephalic_vein_right_dataset import BrachiocephalicVeinRightDataset
