@@ -2,7 +2,7 @@
 # This file is part of the PYCAD library and is released under the MIT License:
 # https://github.com/amine0110/pycad/blob/main/LICENSE
 
-#! The links to the drive needs to be changed.
+
 import os
 import gdown
 import zipfile
