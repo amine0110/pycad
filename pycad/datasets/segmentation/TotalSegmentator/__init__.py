@@ -22,3 +22,4 @@ from .femur_left_dataset import FemurLeftDataset
 from .gallbladder_dataset import GallbladderDataset
 from .gluteus_maximus_left_dataset import GluteusMaximusLeftDataset
 from .gluteus_maximus_right_dataset import GluteusMaximusRightDataset
+from .gluteus_medius_left_dataset import GluteusMediusLeftDataset
