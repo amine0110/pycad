@@ -27,3 +27,4 @@ from .gluteus_medius_right_dataset import GluteusMediusRightDataset
 from .gluteus_minimus_left_dataset import GluteusMinimusLeftDataset
 from .gluteus_minimus_right_dataset import GluteusMinimusRightDataset
 from .heart_dataset import HeartDataset
+from .hip_left_dataset import HipLeftDataset
