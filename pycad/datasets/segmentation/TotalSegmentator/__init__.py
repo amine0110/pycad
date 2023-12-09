@@ -43,3 +43,4 @@ from .kidney_cyst_left_dataset import KidneyCystLeftDataset
 from .kidney_cyst_right_dataset import KidneyCystRightDataset
 from .kidney_left_dataset import KidneyLeftDataset
 from .kidney_right_dataset import KidneyRightDataset
+from .lung_lower_lobe_left_dataset import LungLowerLobeLeftDataset
