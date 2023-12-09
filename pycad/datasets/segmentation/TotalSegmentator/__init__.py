@@ -33,3 +33,4 @@ from .hip_right_dataset import HipRightDataset
 from .humerus_left_dataset import HumerusLeftDataset
 from .humerus_right_dataset import HumerusRightDataset
 from .iliac_artery_left_dataset import IliacArteryLeftDataset
+from .iliac_artery_right_dataset import IliacArteryRightDatasetDataset
