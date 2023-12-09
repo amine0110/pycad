@@ -26,10 +26,10 @@ class DuodenumDataset:
     def __init__(self, dataset_size=1225):
         self.dataset_size = dataset_size
         self.dataset_subgroups = {
-            '100': 'https://drive.google.com/uc?id=1aLBCYd6iMsaGc2I90S4fwS8DwqEyQniE',
-            '200': 'https://drive.google.com/uc?id=1_j-AIHp2c4iZ0En8dbkFMZMZOecpxr69',
-            '400': 'https://drive.google.com/uc?id=1etuROY7m7JC3qlGGp815YlnelJSTYX9R',
-            'all': 'https://drive.google.com/uc?id=1KO1JYGNmirKQbZlfdptCB86P0CcXQHD_'
+            '100': 'https://drive.google.com/uc?id=1LPSbJWpbYzvgtkcpWNxOLvOs5704znKG',
+            '200': 'https://drive.google.com/uc?id=1pIHvTn-Ma_geHvpFaHkt49Oz80yAG4rc',
+            '400': 'https://drive.google.com/uc?id=1Ws8tjOFSWwjQur5NNya_t8VWHa0aac3z',
+            'all': 'https://drive.google.com/uc?id=1iL0bLa7MHCZyS-LyWCTmQ0S5GImAN3cu'
         }
         self.base_path = 'datasets/'
 
