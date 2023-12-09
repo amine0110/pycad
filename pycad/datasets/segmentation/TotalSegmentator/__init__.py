@@ -36,3 +36,4 @@ from .iliac_artery_left_dataset import IliacArteryLeftDataset
 from .iliac_artery_right_dataset import IliacArteryRightDatasetDataset
 from .iliac_vena_left_dataset import IliacVenaLeftDataset
 from .iliac_vena_right_dataset import IliacVenaRightDatasetDataset
+from .iliopsoas_left_dataset import IliopsoasLeftDataset
