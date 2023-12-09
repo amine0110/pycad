@@ -40,3 +40,4 @@ from .iliopsoas_left_dataset import IliopsoasLeftDataset
 from .iliopsoas_right_dataset import IliopsoasRightDataset
 from .inferior_vena_cava_dataset import InferiorVenaCavaDataset
 from .kidney_cyst_left_dataset import KidneyCystLeftDataset
+from .kidney_cyst_right_dataset import KidneyCystRightDataset
