@@ -31,3 +31,4 @@ from .heart_dataset import HeartDataset
 from .hip_left_dataset import HipLeftDataset
 from .hip_right_dataset import HipRightDataset
 from .humerus_left_dataset import HumerusLeftDataset
+from .humerus_right_dataset import HumerusRightDataset
