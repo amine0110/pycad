@@ -19,3 +19,4 @@ from .costal_cartilages_dataset import CostalCartilagesDataset
 from .duodenum_dataset import DuodenumDataset
 from .esophagus_dataset import EsophagusDataset
 from .femur_left_dataset import FemurLeftDataset
+from gallbladder_dataset import GallbladderDataset
