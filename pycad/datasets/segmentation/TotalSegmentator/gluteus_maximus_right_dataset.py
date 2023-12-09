@@ -16,7 +16,7 @@ class GluteusMaximusRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import GluteusMaximusRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import GluteusMaximusRightDataset
     
     gluteus_maximus_right_dataset = GluteusMaximusRightDataset()
     gluteus_maximus_right_dataset.info()  # Print dataset information

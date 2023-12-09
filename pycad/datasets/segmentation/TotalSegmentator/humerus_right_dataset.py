@@ -16,7 +16,7 @@ class HumerusRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import HumerusRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import HumerusRightDataset
     
     humerus_right_dataset = HumerusRightDataset()
     humerus_right_dataset.info()  # Print dataset information

@@ -16,7 +16,7 @@ class BrainDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import BrainDataset
+    from pycad.dataset.segmentation.TotalSegmentator import BrainDataset
     
     brain_dataset = BrainDataset()
     brain_dataset.info()  # Print dataset information

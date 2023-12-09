@@ -16,7 +16,7 @@ class ColonDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import ColonDataset
+    from pycad.dataset.segmentation.TotalSegmentator import ColonDataset
     
     colon_dataset = ColonDataset()
     colon_dataset.info()  # Print dataset information

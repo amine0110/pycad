@@ -16,7 +16,7 @@ class AutochthonRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import AutochthonRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import AutochthonRightDataset
     
     autochthon_right_dataset = AutochthonRightDataset()
     autochthon_right_dataset.info()  # Print dataset information

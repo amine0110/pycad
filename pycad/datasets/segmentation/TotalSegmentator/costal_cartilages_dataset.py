@@ -16,7 +16,7 @@ class CostalCartilagesDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import CostalCartilagesDataset
+    from pycad.dataset.segmentation.TotalSegmentator import CostalCartilagesDataset
     
     costal_cartilages_dataset = CostalCartilagesDataset()
     costal_cartilages_dataset.info()  # Print dataset information

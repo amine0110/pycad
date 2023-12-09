@@ -16,7 +16,7 @@ class HeartDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import HeartDataset
+    from pycad.dataset.segmentation.TotalSegmentator import HeartDataset
     
     heart_dataset = HeartDataset()
     heart_dataset.info()  # Print dataset information

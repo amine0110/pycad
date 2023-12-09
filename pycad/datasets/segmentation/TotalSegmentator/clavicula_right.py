@@ -16,7 +16,7 @@ class ClaviculaRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import ClaviculaRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import ClaviculaRightDataset
     
     clavicula_right_dataset = ClaviculaRightDataset()
     clavicula_right_dataset.info()  # Print dataset information

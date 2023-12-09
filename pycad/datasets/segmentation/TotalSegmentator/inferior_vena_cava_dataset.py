@@ -16,7 +16,7 @@ class InferiorVenaCavaDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import InferiorVenaCavaDataset
+    from pycad.dataset.segmentation.TotalSegmentator import InferiorVenaCavaDataset
     
     inferior_vena_cava_dataset = InferiorVenaCavaDataset()
     inferior_vena_cava_dataset.info()  # Print dataset information

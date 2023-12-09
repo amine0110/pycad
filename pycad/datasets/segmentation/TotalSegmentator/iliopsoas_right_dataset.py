@@ -16,7 +16,7 @@ class IliopsoasRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import IliopsoasRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import IliopsoasRightDataset
     
     iliopsoas_right_dataset = IliopsoasRightDataset()
     iliopsoas_right_dataset.info()  # Print dataset information

@@ -16,7 +16,7 @@ class AdrenalGlandRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import AdrenalGlandRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import AdrenalGlandRightDataset
     
     adrenal_gland_right_dataset = AdrenalGlandRightDataset()
     adrenal_gland_right_dataset.info()  # Print dataset information

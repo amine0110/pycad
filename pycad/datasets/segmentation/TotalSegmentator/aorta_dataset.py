@@ -16,7 +16,7 @@ class AortaDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import AortaDataset
+    from pycad.dataset.segmentation.TotalSegmentator import AortaDataset
     
     aorta_dataset = AortaDataset()
     aorta_dataset.info()  # Print dataset information

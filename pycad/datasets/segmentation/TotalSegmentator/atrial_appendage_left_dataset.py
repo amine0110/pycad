@@ -16,7 +16,7 @@ class AtrialAppendageLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import AtrialAppendageLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import AtrialAppendageLeftDataset
     
     atrial_appendage_left_dataset = AtrialAppendageLeftDataset()
     atrial_appendage_left_dataset.info()  # Print dataset information

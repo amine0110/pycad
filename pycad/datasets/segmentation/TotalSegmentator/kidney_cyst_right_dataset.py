@@ -16,7 +16,7 @@ class KidneyCystRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import KidneyCystRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import KidneyCystRightDataset
     
     kidney_cyst_right_dataset = KidneyCystRightDataset()
     kidney_cyst_right_dataset.info()  # Print dataset information

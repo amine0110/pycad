@@ -16,7 +16,7 @@ class GluteusMinimusLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import GluteusMinimusLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import GluteusMinimusLeftDataset
     
     gluteus_minimus_left_dataset = GluteusMinimusLeftDataset()
     gluteus_minimus_left_dataset.info()  # Print dataset information

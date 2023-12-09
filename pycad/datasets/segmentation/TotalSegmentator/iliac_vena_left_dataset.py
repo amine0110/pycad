@@ -16,7 +16,7 @@ class IliacVenaLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import IliacVenaLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import IliacVenaLeftDataset
     
     iliac_vena_left_dataset = IliacVenaLeftDataset()
     iliac_vena_left_dataset.info()  # Print dataset information

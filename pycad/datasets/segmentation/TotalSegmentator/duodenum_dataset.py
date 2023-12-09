@@ -16,7 +16,7 @@ class DuodenumDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import DuodenumDataset
+    from pycad.dataset.segmentation.TotalSegmentator import DuodenumDataset
     
     duodenum_dataset = DuodenumDataset()
     duodenum_dataset.info()  # Print dataset information

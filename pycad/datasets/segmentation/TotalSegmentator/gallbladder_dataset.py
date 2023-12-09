@@ -16,7 +16,7 @@ class GallbladderDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import GallbladderDataset
+    from pycad.dataset.segmentation.TotalSegmentator import GallbladderDataset
     
     gallbladder_dataset = GallbladderDataset()
     gallbladder_dataset.info()  # Print dataset information

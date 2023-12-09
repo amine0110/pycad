@@ -16,7 +16,7 @@ class HipLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import HipLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import HipLeftDataset
     
     hip_left_dataset = HipLeftDataset()
     hip_left_dataset.info()  # Print dataset information

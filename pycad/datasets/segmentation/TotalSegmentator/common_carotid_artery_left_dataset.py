@@ -16,7 +16,7 @@ class CommonCarotidArteryLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import CommonCarotidArteryLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import CommonCarotidArteryLeftDataset
     
     common_carotid_artery_left_dataset = CommonCarotidArteryLeftDataset()
     common_carotid_artery_left_dataset.info()  # Print dataset information

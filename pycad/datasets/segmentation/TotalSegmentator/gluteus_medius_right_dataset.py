@@ -16,7 +16,7 @@ class GluteusMediusRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import GluteusMediusRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import GluteusMediusRightDataset
     
     gluteus_medius_right_dataset = GluteusMediusRightDataset()
     gluteus_medius_right_dataset.info()  # Print dataset information

@@ -16,7 +16,7 @@ class IliacArteryRightDatasetDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import IliacArteryRightDatasetDataset
+    from pycad.dataset.segmentation.TotalSegmentator import IliacArteryRightDatasetDataset
     
     iliac_artery_right_dataset_dataset = IliacArteryRightDatasetDataset()
     iliac_artery_right_dataset_dataset.info()  # Print dataset information

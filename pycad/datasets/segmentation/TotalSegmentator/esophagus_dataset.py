@@ -16,7 +16,7 @@ class EsophagusDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import EsophagusDataset
+    from pycad.dataset.segmentation.TotalSegmentator import EsophagusDataset
     
     esophagus_dataset = EsophagusDataset()
     esophagus_dataset.info()  # Print dataset information

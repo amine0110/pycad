@@ -16,7 +16,7 @@ class LiverDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import LiverDataset
+    from pycad.dataset.segmentation.TotalSegmentator import LiverDataset
     
     liver_dataset = LiverDataset()
     liver_dataset.info()  # Print dataset information

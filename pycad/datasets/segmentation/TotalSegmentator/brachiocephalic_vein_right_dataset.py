@@ -16,7 +16,7 @@ class BrachiocephalicVeinRightDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import BrachiocephalicVeinRightDataset
+    from pycad.dataset.segmentation.TotalSegmentator import BrachiocephalicVeinRightDataset
     
     brachiocephalic vein_right_dataset = BrachiocephalicVeinRightDataset()
     brachiocephalic vein_right_dataset.info()  # Print dataset information

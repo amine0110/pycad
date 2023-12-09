@@ -16,7 +16,7 @@ class FemurLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import FemurLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import FemurLeftDataset
     
     femur_left_dataset = FemurLeftDataset()
     femur_left_dataset.info()  # Print dataset information

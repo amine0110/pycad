@@ -16,7 +16,7 @@ class AutochthonLeftDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import AutochthonLeftDataset
+    from pycad.dataset.segmentation.TotalSegmentator import AutochthonLeftDataset
     
     autochthon_left_dataset = AutochthonLeftDataset()
     autochthon_left_dataset.info()  # Print dataset information

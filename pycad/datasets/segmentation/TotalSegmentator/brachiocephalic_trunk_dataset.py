@@ -16,7 +16,7 @@ class BrachiocephalicTrunkDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import BrachiocephalicTrunkDataset
+    from pycad.dataset.segmentation.TotalSegmentator import BrachiocephalicTrunkDataset
     
     brachiocephalic_trunk_dataset = BrachiocephalicTrunkDataset()
     brachiocephalic_trunk_dataset.info()  # Print dataset information
