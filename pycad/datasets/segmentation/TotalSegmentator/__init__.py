@@ -14,3 +14,4 @@ from .brachiocephalic_vein_right_dataset import BrachiocephalicVeinRightDataset
 from .brain_dataset import BrainDataset
 from .clavicula_left_dataset import ClaviculaLeftDataset
 from .colon_dataset import ColonDataset
+from .common_carotid_artery_left_dataset import CommonCarotidArteryLeftDataset
