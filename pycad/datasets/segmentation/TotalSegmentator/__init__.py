@@ -18,3 +18,4 @@ from .common_carotid_artery_left_dataset import CommonCarotidArteryLeftDataset
 from .costal_cartilages_dataset import CostalCartilagesDataset
 from .duodenum_dataset import DuodenumDataset
 from .esophagus_dataset import EsophagusDataset
+from .femur_left_dataset import FemurLeftDataset
