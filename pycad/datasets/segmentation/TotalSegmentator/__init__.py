@@ -46,3 +46,4 @@ from .kidney_right_dataset import KidneyRightDataset
 from .lung_lower_lobe_left_dataset import LungLowerLobeLeftDataset
 from .lung_lower_lobe_right_dataset import LungLowerLobeRightDataset
 from .lung_middle_lobe_right_dataset import LungMiddleLobeRightDataset
+from .lung_upper_lobe_left_dataset import LungUpperLobeLeftDataset
