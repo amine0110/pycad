@@ -7,3 +7,4 @@ from .pancreas_dataset import PancreasDataset
 from .hippocampus_dataset import HippocampusDataset
 from .heart_dataset import HeartDataset
 from .brain_tumor_dataset import BrainTumorDataset
+from .colon_dataset import ColonDataset
