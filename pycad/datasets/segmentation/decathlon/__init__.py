@@ -4,3 +4,4 @@
 
 
 from .pancreas_dataset import PancreasDataset
+from .hippocampus_dataset import HippocampusDataset
