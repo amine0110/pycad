@@ -53,3 +53,4 @@ from .portal_vein_and_splenic_vein_dataset import PortalVeinSplenicVeinDataset
 from .prostate_dataset import ProstateDataset
 from .pulmonary_vein_dataset import PulmonaryVeinDataset
 from .rib_left_1_dataset import RibLeft1Dataset
+from .rib_left_2_dataset import RibLeft2Dataset
