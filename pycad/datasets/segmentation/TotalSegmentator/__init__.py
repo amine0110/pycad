@@ -16,6 +16,7 @@ from .brain_dataset import BrainDataset
 from .clavicula_left_dataset import ClaviculaLeftDataset
 from .colon_dataset import ColonDataset
 from .common_carotid_artery_left_dataset import CommonCarotidArteryLeftDataset
+from .common_carotid_artery_right_dataset import CommonCarotidArteryRightDataset
 from .costal_cartilages_dataset import CostalCartilagesDataset
 from .duodenum_dataset import DuodenumDataset
 from .esophagus_dataset import EsophagusDataset
