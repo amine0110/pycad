@@ -10,3 +10,4 @@ from .brain_tumor_dataset import BrainTumorDataset
 from .colon_dataset import ColonDataset
 from .spleen_dataset import SpleenDataset
 from .lung_tumor_dataset import LungTumorDataset
+from .prostate_dataset import ProstateDataset
