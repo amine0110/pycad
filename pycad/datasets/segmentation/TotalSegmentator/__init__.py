@@ -48,3 +48,4 @@ from .lung_lower_lobe_right_dataset import LungLowerLobeRightDataset
 from .lung_middle_lobe_right_dataset import LungMiddleLobeRightDataset
 from .lung_upper_lobe_left_dataset import LungUpperLobeLeftDataset
 from .lung_upper_lobe_right_dataset import LungUpperLobeRightDataset
+from .pancreas_dataset import PancreasDataset
