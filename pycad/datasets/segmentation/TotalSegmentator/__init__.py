@@ -51,3 +51,4 @@ from .lung_upper_lobe_right_dataset import LungUpperLobeRightDataset
 from .pancreas_dataset import PancreasDataset
 from .portal_vein_and_splenic_vein_dataset import PortalVeinSplenicVeinDataset
 from .prostate_dataset import ProstateDataset
+from .pulmonary_vein_dataset import PulmonaryVeinDataset
