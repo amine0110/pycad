@@ -89,3 +89,4 @@ from .stomach_dataset import StomachDataset
 from .subclavian_artery_left_dataset import SubclavianArteryLeftDataset
 from .subclavian_artery_right_dataset import SubclavianArteryRightDataset
 from .superior_vena_cava_dataset import SuperiorVenaCavaDataset
+from .thyroid_gland_dataset import ThyroidGlandDataset
