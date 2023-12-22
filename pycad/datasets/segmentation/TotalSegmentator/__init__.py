@@ -107,3 +107,4 @@ from .vertebrae_L5_dataset import VertebraeL5Dataset
 from .vertebrae_S1_dataset import VertebraeS1Dataset
 from .vertebrae_T1_dataset import VertebraeT1Dataset
 from .vertebrae_T2_dataset import VertebraeT2Dataset
+from .vertebrae_T3_dataset import VertebraeT3Dataset
