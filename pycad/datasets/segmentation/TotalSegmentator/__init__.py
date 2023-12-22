@@ -85,3 +85,4 @@ from .small_bowel_dataset import SmallBowelDataset
 from .spinal_cord_dataset import SpinalCordDataset
 from .spleen_dataset import SpleenDataset
 from .sternum_dataset import SternumDataset
+from .stomach_dataset import StomachDataset
