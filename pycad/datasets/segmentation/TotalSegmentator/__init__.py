@@ -91,3 +91,4 @@ from .subclavian_artery_right_dataset import SubclavianArteryRightDataset
 from .superior_vena_cava_dataset import SuperiorVenaCavaDataset
 from .thyroid_gland_dataset import ThyroidGlandDataset
 from .trachea_dataset import TracheaDataset
+from .urinary_bladder_dataset import UrinaryBladderDataset
