@@ -67,3 +67,4 @@ from .rib_left_11_dataset import RibLeft11Dataset
 from .rib_left_12_dataset import RibLeft12Dataset
 from .rib_right_1_dataset import RibRight1Dataset
 from .rib_right_2_dataset import RibRight2Dataset
+from .rib_right_3_dataset import RibRight3Dataset
