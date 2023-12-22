@@ -80,3 +80,4 @@ from .rib_right_12_dataset import RibRight12Dataset
 from .sacrum_dataset import SacrumDataset
 from .scapula_left_dataset import ScapulaLeftDataset
 from .scapula_right_dataset import ScapulaRightDataset
+from .skull_dataset import SkullDataset
