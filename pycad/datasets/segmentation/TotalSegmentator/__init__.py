@@ -93,3 +93,4 @@ from .thyroid_gland_dataset import ThyroidGlandDataset
 from .trachea_dataset import TracheaDataset
 from .urinary_bladder_dataset import UrinaryBladderDataset
 from .vertebrae_C1_dataset import VertebraeC1Dataset
+from .vertebrae_C2_dataset import VertebraeC2Dataset
