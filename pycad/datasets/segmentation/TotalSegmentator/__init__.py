@@ -92,3 +92,4 @@ from .superior_vena_cava_dataset import SuperiorVenaCavaDataset
 from .thyroid_gland_dataset import ThyroidGlandDataset
 from .trachea_dataset import TracheaDataset
 from .urinary_bladder_dataset import UrinaryBladderDataset
+from .vertebrae_C1_dataset import VertebraeC1Dataset
