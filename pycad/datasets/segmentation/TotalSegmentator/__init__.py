@@ -87,3 +87,4 @@ from .spleen_dataset import SpleenDataset
 from .sternum_dataset import SternumDataset
 from .stomach_dataset import StomachDataset
 from .subclavian_artery_left_dataset import SubclavianArteryLeftDataset
+from .subclavian_artery_right_dataset import SubclavianArteryRightDataset
