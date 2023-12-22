@@ -99,3 +99,4 @@ from .vertebrae_C4_dataset import VertebraeC4Dataset
 from .vertebrae_C5_dataset import VertebraeC5Dataset
 from .vertebrae_C6_dataset import VertebraeC6Dataset
 from .vertebrae_C7_dataset import VertebraeC7Dataset
+from .vertebrae_L1_dataset import VertebraeL1Dataset
