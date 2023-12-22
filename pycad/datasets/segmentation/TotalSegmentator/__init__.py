@@ -86,3 +86,4 @@ from .spinal_cord_dataset import SpinalCordDataset
 from .spleen_dataset import SpleenDataset
 from .sternum_dataset import SternumDataset
 from .stomach_dataset import StomachDataset
+from .subclavian_artery_left_dataset import SubclavianArteryLeftDataset
