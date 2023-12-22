@@ -83,4 +83,5 @@ from .scapula_right_dataset import ScapulaRightDataset
 from .skull_dataset import SkullDataset
 from .small_bowel_dataset import SmallBowelDataset
 from .spinal_cord_dataset import SpinalCordDataset
-from spleen_dataset import SpleenDataset
+from .spleen_dataset import SpleenDataset
+from .sternum_dataset import SternumDataset
