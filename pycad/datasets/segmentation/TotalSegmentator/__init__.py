@@ -95,3 +95,4 @@ from .urinary_bladder_dataset import UrinaryBladderDataset
 from .vertebrae_C1_dataset import VertebraeC1Dataset
 from .vertebrae_C2_dataset import VertebraeC2Dataset
 from .vertebrae_C3_dataset import VertebraeC3Dataset
+from .vertebrae_C4_dataset import VertebraeC4Dataset
