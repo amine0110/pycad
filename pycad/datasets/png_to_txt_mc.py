@@ -37,16 +37,23 @@ class PngToTxtConverterMC:
     ```
 
     '''
-    def __init__(self, input_folder, output_folder, epsilon_coeff=0.001):
+
+    def __init__(self, input_folder, output_folder, epsilon_coeff=0.001, file_types=('.png', '.jpg')):
         self.input_folder = input_folder
         self.output_folder = output_folder
         self.epsilon_coeff = epsilon_coeff
+        self.file_types = file_types
         os.makedirs(self.output_folder, exist_ok=True)
 
-    def multi_class_mask_to_yolo_polygons(self, mask, classes=[0, 1, 2]):
+    def multi_class_mask_to_yolo_polygons(self, mask):
+        unique_classes = np.unique(mask)
+        # Remove the background class if it's included (usually 0)
+        unique_classes = unique_classes[unique_classes != 0]  
+        # Create a mapping from unique pixel values to class indices
+        class_mapping = {v: i for i, v in enumerate(unique_classes)}
         all_polygons = []
-        for class_index in classes:
-            binary_mask = (mask == class_index).astype(np.uint8) * 255
+        for class_value in unique_classes:
+            binary_mask = (mask == class_value).astype(np.uint8) * 255
             contours, _ = cv2.findContours(binary_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
             for contour in contours:
                 if len(contour) >= 5:
@@ -55,12 +62,13 @@ class PngToTxtConverterMC:
                     x_coords_normalized = approx_contour[:, 0, 0] / mask.shape[1]
                     y_coords_normalized = approx_contour[:, 0, 1] / mask.shape[0]
                     polygon = np.vstack((x_coords_normalized, y_coords_normalized)).T
-                    polygon_line = f"{class_index - 1} " + ' '.join([f"{x:.6f} {y:.6f}" for x, y in polygon])
+                    class_index = class_mapping[class_value]  # Get the class index
+                    polygon_line = f"{class_index} " + ' '.join([f"{x:.6f} {y:.6f}" for x, y in polygon])
                     all_polygons.append(polygon_line)
         return all_polygons
 
     def run(self):
-        image_files = [f.path for f in os.scandir(self.input_folder) if f.is_file() and f.name.endswith('.png')]
+        image_files = [f.path for f in os.scandir(self.input_folder) if f.is_file() and f.name.endswith(self.file_types)]
         for image_file in image_files:
             mask = cv2.imread(image_file, cv2.IMREAD_GRAYSCALE)
             polygons = self.multi_class_mask_to_yolo_polygons(mask)
