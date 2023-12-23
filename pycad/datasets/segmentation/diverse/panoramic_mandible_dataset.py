@@ -26,7 +26,7 @@ class PanMandibleDataset:
     def __init__(self, dataset_size=116):
         self.dataset_size = dataset_size
         self.dataset_subgroups = {
-            'all': 'https://drive.google.com/uc?id=1R6CQvrehAafbjODswCCcgnd6IJHuRdRf'
+            'all': 'https://drive.google.com/uc?id=1oBmk6KOuVTCURMyzNXQRYBf0KjcouqaA'
         }
         self.base_path = 'datasets/'
 

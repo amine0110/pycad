@@ -27,7 +27,7 @@ For more installation instructions, please see [this](https://github.com/amine01
 For detailed usage and examples, refer to the [tutorials](./tutorials) directory and [documentation](./docs).
 
 ## What is New?
-The latest release `0.0.6` contains a new feature which is the possibility to download one of over 120 different datasets (more datasets will be added in the next releases). Here is an example of use:
+The latest release `0.0.7` contains a new feature which is the possibility to download one of over 120 different datasets (more datasets will be added in the next releases). Here is an example of use:
 
 ```Python
 from pycad.dataset.segmentation.TotalSegmentator import AutochthonLeftDataset
