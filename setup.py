@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pycad-medic',
-    version='0.0.6',
+    version='0.0.7',
     author='Mohammed El Amine Mokhtari',
     author_email='mohammed@pycad.co',
     packages=find_packages(),
