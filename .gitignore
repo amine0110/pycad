@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 draft.py
+0_template.py
 
 # C extensions
 *.so
