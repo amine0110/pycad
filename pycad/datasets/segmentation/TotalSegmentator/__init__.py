@@ -117,3 +117,22 @@ from .vertebrae_T9_dataset import VertebraeT9Dataset
 from .vertebrae_T10_dataset import VertebraeT10Dataset
 from .vertebrae_T11_dataset import VertebraeT11Dataset
 from .vertebrae_T12_dataset import VertebraeT12Dataset
+
+
+def info():
+    print(f"""
+This dataset is the same dataset that Total Segmentator was trained on. But here is structured to be used separately instead of having all the cases
+together. You can download the whole dataset and you can downlaod just a batch (if you have hardware limitations). For all the organs, you will find sub-groups
+of 100, 200, 400 and all (1225) cases.
+    
+The classes are not in the same nifti file, but you will find for each class or organ a separate folder and you can download only what you need (for example liver).
+The examples of how to download each dataset are defined in each organ class.
+    
+Here is an example:
+
+from pycad.dataset.segmentation.TotalSegmentator import AdrenalGlandLeftDataset
+
+adrenal_gland_left_dataset = AdrenalGlandLeftDataset()
+adrenal_gland_left_dataset.info()  # Print dataset information
+adrenal_gland_left_dataset.download('100')  # Download and extract subgroup 100
+        """)
