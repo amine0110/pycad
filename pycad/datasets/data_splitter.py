@@ -4,13 +4,13 @@
 
 
 import os
-from sklearn.model_selection import train_test_split
 import shutil
-
+import random
+import logging
 
 class DataSplitter:
     '''
-    This class is for splitting the images and labels into train/valid folders. The format by default is the yolo format, it is as follows:\n
+    This class is for splitting the images and labels into train/valid/test folders. The format by default is the yolo format, it is as follows:\n
     train\n
     |__ images\n
         |__ image_0\n
@@ -30,83 +30,91 @@ class DataSplitter:
         |__ label_0\n
         |__ label_1\n
         |__ ...\n
+    \n
+    test\n
+    |__ images\n
+        |__ image_0\n
+        |__ image_1\n
+        |__ ...\n
+    |__ labels\n
+        |__ label_0\n
+        |__ label_1\n
+        |__ ...\n
     
-    `Params`:
-    - images_dir: the directory where the input images are stored
-    - labels_dir: the directory where the input labels are stored
-    - output_dir: the directory to save the split files, train, valid (you don't need to specify the folders name train and valid, it will be taken in consideration by the code)
-    - train_size: the size of the training data (percentage)
-    - random_state: this is to controle how randomly the code will be to choose the train and valid files (this is a good value by default)
-    - delete_input: you can activate it if you want that the code deletes the input images and labels after doing the split\n
+    ### Params
+    - images_dir: the path to the images
+    - labels_dir: the path to the labels 
+    - output_dir: the path to save the split folders 
+    - train_ratio: the train ratio, default=0.7
+    - valid_ratio: the validation ratio, default=0.2
+    - test_ratio: the test ratio, default=0.1
+    - delete_input: whether you want to delete the input files after split, default=False
 
     ### Example of usage:
     ```
     from pycad.datasets import DataSplitter
 
-    input_dir_img = 'path to the input folder for the images'
-    input_dir_labels = 'path to the input folder for the labels'
+    img = 'datasets/dental/xray_panoramic_mandible/images'
+    msk = 'datasets/dental/xray_panoramic_mandible/masks'
+    output = 'datasets/dental/test'
 
-    splitter = DataSplitter(input_dir_img, input_dir_labels, .8)
+    splitter = DataSplitter(img, msk, output, 0.7, 0.2, 0.1, delete_input=False)
     splitter.run()
-    ```
-
     '''
-    def __init__(self, images_dir, labels_dir, output_dir, train_size=0.8, random_state=42, delete_input=False):
+    def __init__(self, images_dir, labels_dir, output_dir, train_ratio=0.7, valid_ratio=0.2, test_ratio=0.1, delete_input=False):
         self.images_dir = images_dir
         self.labels_dir = labels_dir
         self.output_dir = output_dir
-        self.train_size = train_size
-        self.random_state = random_state
+        self.train_ratio = train_ratio
+        self.valid_ratio = valid_ratio
+        self.test_ratio = test_ratio
         self.delete_input = delete_input
+        self.setup_directories()
 
-        # Define the directory structure
-        self.train_images_dir = os.path.join(self.output_dir, 'train', 'images')
-        self.train_labels_dir = os.path.join(self.output_dir, 'train', 'labels')
-        self.valid_images_dir = os.path.join(self.output_dir, 'valid', 'images')
-        self.valid_labels_dir = os.path.join(self.output_dir, 'valid', 'labels')
+    def setup_directories(self):
+        self.dirs = {
+            'train': {'images': os.path.join(self.output_dir, 'train', 'images'),
+                      'labels': os.path.join(self.output_dir, 'train', 'labels')},
+            'valid': {'images': os.path.join(self.output_dir, 'valid', 'images'),
+                      'labels': os.path.join(self.output_dir, 'valid', 'labels')},
+            'test': {'images': os.path.join(self.output_dir, 'test', 'images'),
+                     'labels': os.path.join(self.output_dir, 'test', 'labels')}
+        }
+        for d in self.dirs.values():
+            for path in d.values():
+                os.makedirs(path, exist_ok=True)
 
-    def split_data(self):
-        # Get all file names
-        all_images = os.listdir(self.images_dir)
-        all_labels = os.listdir(self.labels_dir)
+    def get_filenames(self):
+        images = sorted(os.listdir(self.images_dir))
+        labels = sorted(os.listdir(self.labels_dir))
+        return images, labels
 
-        # Split data into train and validation sets
-        train_images, valid_images = train_test_split(all_images, test_size=1-self.train_size, random_state=self.random_state)
-        train_labels, valid_labels = train_test_split(all_labels, test_size=1-self.train_size, random_state=self.random_state)
+    def split_data(self, images, labels):
+        data = list(zip(images, labels))
+        random.shuffle(data)
+        total = len(data)
+        train_end = int(total * self.train_ratio)
+        valid_end = train_end + int(total * self.valid_ratio)
 
-        return train_images, valid_images, train_labels, valid_labels
+        train_data = data[:train_end]
+        valid_data = data[train_end:valid_end]
+        test_data = data[valid_end:] if self.test_ratio > 0 else []
 
-    def create_directories(self):
-        # Create directories if they don't exist
-        os.makedirs(self.train_images_dir, exist_ok=True)
-        os.makedirs(self.train_labels_dir, exist_ok=True)
-        os.makedirs(self.valid_images_dir, exist_ok=True)
-        os.makedirs(self.valid_labels_dir, exist_ok=True)
+        return {'train': train_data, 'valid': valid_data, 'test': test_data}
 
-    def copy_files(self, train_images, valid_images, train_labels, valid_labels):
-        # Copy files into the corresponding directories
-        print(f'[INFO]: Copying Train-Images to {self.train_images_dir}')
-        for file in train_images:
-            shutil.copy(os.path.join(self.images_dir, file), self.train_images_dir)
-        
-        print(f'[INFO]: Copying Train-Labels to {self.train_labels_dir}')
-        for file in train_labels:
-            shutil.copy(os.path.join(self.labels_dir, file), self.train_labels_dir)
-        
-        print(f'[INFO]: Copying Valid-Images to {self.valid_images_dir}')
-        for file in valid_images:
-            shutil.copy(os.path.join(self.images_dir, file), self.valid_images_dir)
-        
-        print(f'[INFO]: Copying Valid-Labels to {self.valid_labels_dir}')
-        for file in valid_labels:
-            shutil.copy(os.path.join(self.labels_dir, file), self.valid_labels_dir)
-    
+    def copy_files(self, split_data):
+        for split, data in split_data.items():
+            for img, lbl in data:
+                shutil.copy(os.path.join(self.images_dir, img), self.dirs[split]['images'])
+                shutil.copy(os.path.join(self.labels_dir, lbl), self.dirs[split]['labels'])
+                logging.info(f'Copied {img} and {lbl} to {split} set')
+
     def run(self):
-        train_images, valid_images, train_labels, valid_labels = self.split_data()
-        self.create_directories()
-        self.copy_files(train_images, valid_images, train_labels, valid_labels)
+        images, labels = self.get_filenames()
+        split_data = self.split_data(images, labels)
+        self.copy_files(split_data)
 
         if self.delete_input:
-            print(f'[INFO]: Deleting input directories')
             shutil.rmtree(self.images_dir)
             shutil.rmtree(self.labels_dir)
+            logging.info('Deleted original input directories')
