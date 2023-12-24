@@ -27,17 +27,7 @@ For more installation instructions, please see [this](https://github.com/amine01
 For detailed usage and examples, refer to the [tutorials](./tutorials) directory and [documentation](./docs).
 
 ## What is New?
-The latest release `0.0.8` contains a new feature which is the possibility to download one of over 120 different datasets (more datasets will be added in the next releases). Here is an example of use:
-
-```Python
-from pycad.dataset.segmentation.TotalSegmentator import AutochthonLeftDataset
-
-autochthon_left_dataset = AutochthonLeftDataset()
-autochthon_left_dataset.info()  # Print dataset information
-autochthon_left_dataset.download('100')  # Download and extract subgroup 100
-```
-
-This feature is useful for people who wants to experiment with the medical imaging dataset and needs a small batch to test or they need to download the dataset to a specific server without the need to use the UI. Everything is on your terminal and it is fast!
+The latest release contains some new exciting features, if you want to know more about the new features you can read the [release features documentation](./docs/release_features.md).
 
 ## Contributions & Support
 

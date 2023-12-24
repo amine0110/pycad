@@ -5,3 +5,5 @@
 
 from .stl_visualizer import STLVisualizer
 from .nifti_visualizer import NIFTIVisualizer
+from .dicom_slider import DicomSlider
+from .nifti_slider import NiftiSlider
