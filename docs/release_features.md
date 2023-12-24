@@ -19,6 +19,6 @@ As a good practise, it is recommended to create a unittest for each module of th
 For multiple reasons, we may need a built-in DICOM/NIFTI viewer so that we can use it to test the different operations using the `pycad` library. So you can test your operations from now directly using pycad.visualization module, for example when you apply windowing to a CT scan or MRI, you can visualize the difference.
 
 ## Tutorial
-The mandible segmentation tutorial is now accessible through Google Colab, where it is simple and easy for the beginners. You will see that it is direct to the point and it doesn't require a lot of knowledge to understand the tutorial, and the goal of this tutorial is to show you how to use the pycad library to prepare your dataset for training a 2D segmentation model using YOLOv8. The tutrial can be found [here](../tutorials/pycad_yolov8.ipynb)
+The mandible segmentation tutorial is now accessible through Google Colab, where it is simple and easy for the beginners. You will see that it is direct to the point and it doesn't require a lot of knowledge to understand the tutorial, and the goal of this tutorial is to show you how to use the pycad library to prepare your dataset for training a 2D segmentation model using YOLOv8. The tutrial can be found [here](../tutorials/pycad_yolov8.ipynb).
 
 ![mandible](../assets/panoramic_prediction.png)
