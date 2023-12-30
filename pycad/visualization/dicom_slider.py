@@ -21,9 +21,9 @@ class DicomSlider:
     DicomSlider(dicom_directory)
     ```
     '''
-    def __init__(self, directory):
+    def __init__(self, directory, force=False):
         self.directory = directory
-        self.slices, self.pixel_spacing = self.load_dicom_series(directory)
+        self.slices, self.pixel_spacing = self.load_dicom_series(directory, force=force)
         self.current_view = 'axial'  # default view
         self.image_stack = self.build_image_stack(self.slices, self.pixel_spacing)
         self.fig, self.ax = plt.subplots()
@@ -33,11 +33,11 @@ class DicomSlider:
         self.display_slice(0)
         plt.show()
 
-    def load_dicom_series(self, directory):
+    def load_dicom_series(self, directory, force=False):
         dicom_images = []
         for filename in os.listdir(directory):
             if filename.endswith('.dcm'):
-                ds = pydicom.dcmread(os.path.join(directory, filename))
+                ds = pydicom.dcmread(os.path.join(directory, filename), force=force)
                 dicom_images.append(ds)
         # Assuming all images have the same pixel spacing and checking for SliceThickness
         pixel_spacing = dicom_images[0].PixelSpacing

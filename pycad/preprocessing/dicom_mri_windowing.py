@@ -71,7 +71,7 @@ class DicomMriWindowing:
             print(f"Failed to save DICOM slice: {e}")
             return False
 
-    def window_series(self, coef=4):
+    def window_series(self, coef=4, force=False):
         dicom_paths = glob(os.path.join(self.input_dir, '*.dcm'))
         
         # Load the DICOM series
@@ -86,7 +86,7 @@ class DicomMriWindowing:
         # Iterate over each slice
         for i in tqdm(range(len(windowed_array)), desc="Processing"):
             try:
-                dcm = pydicom.dcmread(dicom_paths[i])
+                dcm = pydicom.dcmread(dicom_paths[i], force=force)
                 if not self.save_dicom_slice(dcm, windowed_array[i], i):
                     break
             except InvalidDicomError:
