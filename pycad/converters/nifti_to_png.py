@@ -59,7 +59,7 @@ class NiftiToPngConverter:
         This function is to take one nifti file and then convert it into png series, it keeps the same casename and then adds _indexID.\n
         - `in_dir`: the path to one nifti file: nii | nii.gz\n
         - `out_dir`: the path to save the png series\n
-        - `data_type`: the type of the input nifti file, is it a volume or segmentation?
+        - `data_type`: the type of the input nifti file, is it a volume or segmentation? This value is expecting either 'seg' for segmentation or 'vol' for volume.
         '''
         try:
             new_img = sitk.ReadImage(in_dir)
