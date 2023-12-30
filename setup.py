@@ -27,6 +27,7 @@ setup(
         'opencv-python==4.8.1.78',
         'pytest-shutil',
         'nibabel==3.2.2',
+        'gdown==4.7.1',
     ],
     entry_points={
         'console_scripts': [
