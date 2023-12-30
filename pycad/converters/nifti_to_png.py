@@ -138,6 +138,6 @@ class NiftiToPngConverter:
         for name in names_list:
             # Search for images that contain the specified name and have the defined extensions
             for ext in image_extensions:
-                for filename in glob.glob(os.path.join(folder_path, f'*{name}*.{ext}')):
+                for filename in glob(os.path.join(folder_path, f'*{name}*.{ext}')):
                     print(f"Deleting {filename}")
                     os.remove(filename)
