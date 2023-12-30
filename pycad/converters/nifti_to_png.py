@@ -30,7 +30,7 @@ class NiftiToPngConverter:
     ```
     '''
 
-    def __init__(self, max_v=200, min_v=-200):
+    def __init__(self, max_v=None, min_v=None):
         self.max_v = max_v
         self.min_v = min_v
         self.rejected_cases = []
