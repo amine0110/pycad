@@ -16,7 +16,7 @@ class KidneyStoneDataset:
     ### Example usage
 
     ```Python
-    from pycad.dataset.segmentation.decathlon import KidneyStoneDataset
+    from pycad.dataset.detection.diverse import KidneyStoneDataset
     
     kidney_stone_dataset = KidneyStoneDataset()
     kidney_stone_dataset.info()  # Print dataset information
