@@ -47,12 +47,12 @@ class DicomAnonymizer:
             print(f"- {field}")
         return anonymization_fields
     
-    def anonymize_dicoms(self, fields_to_anonymize):
+    def anonymize_dicoms(self, fields_to_anonymize, force=False):
         dicom_files = glob(os.path.join(self.input_dir, '*.dcm'))
         for file_path in tqdm(dicom_files, desc="Anonymizing"):
             try:
                 # Read the DICOM file
-                dicom = pydicom.read_file(file_path)
+                dicom = pydicom.read_file(file_path, force=force)
                 
                 # Anonymize the fields specified
                 for field in fields_to_anonymize:
@@ -64,7 +64,7 @@ class DicomAnonymizer:
             except Exception as e:
                 print(f"Error anonymizing {file_path}: {e}")
     
-    def run(self):
+    def run(self, force=False):
         # List fields that can be anonymized
         available_fields = self.list_anonymization_fields()
         
@@ -79,7 +79,7 @@ class DicomAnonymizer:
         confirm = input("Do you want to proceed with anonymization? (yes/no): ")
         if confirm.lower() == 'yes':
             # Perform the anonymization
-            self.anonymize_dicoms(fields_to_anonymize)
+            self.anonymize_dicoms(fields_to_anonymize, force=force)
             print("Anonymization complete.")
         else:
             print("Anonymization canceled.")

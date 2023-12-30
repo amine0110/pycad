@@ -30,9 +30,10 @@ class NiftiToPngConverter:
     ```
     '''
 
-    def __init__(self, max_v=200, min_v=-200):
+    def __init__(self, max_v=None, min_v=None):
         self.max_v = max_v
         self.min_v = min_v
+        self.rejected_cases = []
 
     def prepare_image(self, image_data, data_type='vol'):
         '''
@@ -59,12 +60,12 @@ class NiftiToPngConverter:
         This function is to take one nifti file and then convert it into png series, it keeps the same casename and then adds _indexID.\n
         - `in_dir`: the path to one nifti file: nii | nii.gz\n
         - `out_dir`: the path to save the png series\n
-        - `data_type`: the type of the input nifti file, is it a volume or segmentation?
+        - `data_type`: the type of the input nifti file, is it a volume or segmentation? This value is expecting either 'seg' for segmentation or 'vol' for volume.
         '''
         try:
             new_img = sitk.ReadImage(in_dir)
             img_array = sitk.GetArrayFromImage(new_img)
-            case_name = os.path.basename(in_dir)[:-7]
+            case_name = os.path.basename(in_dir).split('.')[0]
 
             if not os.path.exists(out_dir):
                 os.makedirs(out_dir)
@@ -77,6 +78,7 @@ class NiftiToPngConverter:
                 img.save(f"{out_dir}/{case_name}_{str(i).zfill(4)}.png")
         except:
             print('Error with the file:', in_dir)
+            self.rejected_cases.append(os.path.basename(in_dir).split('.')[0])
 
     def convert_nifti_to_png_dir(self, in_dir:str, out_dir:str, data_type:str):
         '''
@@ -91,7 +93,7 @@ class NiftiToPngConverter:
         for case in tqdm(cases_list):
             self.convert_nifti_to_png(case, out_dir, data_type)
 
-    def run(self, in_dir_vol:str = None, in_dir_seg:str = None, out_dir:str = None):
+    def run(self, in_dir_vol:str = None, in_dir_seg:str = None, out_dir:str = None, delete_none_converted=False):
         '''
         This function is the main function to call the conversion function for the volumes and segmentations.\n
         - `in_dir_vol`: path to the input dir containing the volume files (nifti)\n
@@ -106,3 +108,36 @@ class NiftiToPngConverter:
         if in_dir_seg:
             print("Converting segmentation files")
             self.convert_nifti_to_png_dir(in_dir_seg, out_dir + '/labels', 'seg') # convert the segmentation files
+
+        # Delete the none converted files
+        if delete_none_converted:
+            self.delete_images_by_name(out_dir + '/labels', self.rejected_cases)
+            self.delete_images_by_name(out_dir + '/images', self.rejected_cases)
+            print('The rejected cases have been deleted.')
+        
+        # Show info
+        print(f"INFO: the conversions is done with {len(os.listdir(out_dir + '/labels'))} labels and {len(os.listdir(out_dir + '/images'))} images.")
+
+    def delete_images_by_name(self, folder_path, names_list):
+        """
+        Deletes images from a specified folder whose names contain any of the strings in the provided list.
+        
+        ### Params
+        - folder_path: Path to the folder containing the images.
+        - name_list: List of strings. Images containing any of these strings in their names will be deleted.
+        """
+        # Check if the folder exists
+        if not os.path.exists(folder_path):
+            print(f"Folder {folder_path} does not exist.")
+            return
+
+        # List of image extensions to consider
+        image_extensions = ['png', 'jpg', 'jpeg']
+
+        # Iterate over each name in the list
+        for name in names_list:
+            # Search for images that contain the specified name and have the defined extensions
+            for ext in image_extensions:
+                for filename in glob(os.path.join(folder_path, f'*{name}*.{ext}')):
+                    print(f"Deleting {filename}")
+                    os.remove(filename)

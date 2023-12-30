@@ -48,9 +48,9 @@ class DicomCTWindowing:
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
 
-    def preprocess_ct_image(self, dicom_path, output_path, i):
+    def preprocess_ct_image(self, dicom_path, output_path, i, force=False):
         # Load the DICOM file
-        dcm = pydicom.read_file(dicom_path)
+        dcm = pydicom.read_file(dicom_path, force=force)
         original_image = dcm.pixel_array.astype(float)
 
         # Rescale to Hounsfield units (HU)
@@ -84,7 +84,7 @@ class DicomCTWindowing:
 
         return original_image, image
 
-    def process_directory(self, input_dir, output_dir):
+    def process_directory(self, input_dir, output_dir, force=False):
         """
         Processes all DICOM files in a given directory, applies windowing, and saves the output.
         """
@@ -100,7 +100,7 @@ class DicomCTWindowing:
         example_image = None
         for i, dicom_path in enumerate(sorted(dicom_paths)):
             try:
-                original_image, preprocessed_image = self.preprocess_ct_image(dicom_path, output_dir, i)
+                original_image, preprocessed_image = self.preprocess_ct_image(dicom_path, output_dir, i, force=force)
                 if self.visualize and example_image is None:
                     example_image = (original_image, preprocessed_image)
             except Exception as e:

@@ -27,7 +27,7 @@ For more installation instructions, please see [this](https://github.com/amine01
 For detailed usage and examples, refer to the [tutorials](./tutorials) directory and [documentation](./docs).
 
 ## What is New?
-The latest release contains some new exciting features, if you want to know more about the new features you can read the [release features documentation](./docs/release_features.md).
+The latest release contains some new exciting features, if you want to know more about the new features you can read the [release features documentation](https://github.com/amine0110/pycad/tree/main/docs/releases/v_0_0_10.md).
 
 ## Contributions & Support
 

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pycad-medic',
-    version='0.0.9',
+    version='0.0.10',
     author='Mohammed El Amine Mokhtari',
     author_email='mohammed@pycad.co',
     packages=find_packages(),
@@ -27,6 +27,7 @@ setup(
         'opencv-python==4.8.1.78',
         'pytest-shutil',
         'nibabel==3.2.2',
+        'gdown==4.7.1',
     ],
     entry_points={
         'console_scripts': [
