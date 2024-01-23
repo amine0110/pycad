@@ -65,7 +65,7 @@ class DicomToNiftiConverter:
                 output_filename = os.path.join(output_path, output_filename)
             else:
                 dir_name = os.path.basename(os.path.normpath(dicom_series[0]))    
-                output_filename = os.path.join(output_path, dir_name+'.nrrd')
+                output_filename = os.path.join(output_path, dir_name+'.nii.gz')
                 
             sitk.WriteImage(image, output_filename)
             self.logger.info(f'Converted: {output_filename}')
