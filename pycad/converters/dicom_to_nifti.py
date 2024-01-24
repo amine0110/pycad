@@ -6,7 +6,6 @@
 import SimpleITK as sitk
 import os
 import logging
-import random
 
 class DicomToNiftiConverter:
 
@@ -51,7 +50,7 @@ class DicomToNiftiConverter:
                 series_paths.append((subdir, dicom_files))
         return series_paths
 
-    def convert_series_to_nifti(self, dicom_series, output_path):
+    def convert_series_to_nifti(self, dicom_series, output_path, output_filename=None):
         """
         Converts a DICOM series to a NIFTI file, naming the output based on the parent directory of the DICOM series.
         """
@@ -62,16 +61,18 @@ class DicomToNiftiConverter:
             image = reader.Execute()
 
             # Use the directory name of the DICOM series as the file name for the NIfTI image.
-            dir_name = os.path.basename(os.path.normpath(dicom_series[0]))
-            
-            random_id = str(random.randint(1000, 9999))
-            output_filename = os.path.join(output_path, f'{dir_name}_{random_id}.nii.gz')
+            if output_filename:
+                output_filename = os.path.join(output_path, output_filename)
+            else:
+                dir_name = os.path.basename(os.path.normpath(dicom_series[0]))    
+                output_filename = os.path.join(output_path, dir_name+'.nii.gz')
+                
             sitk.WriteImage(image, output_filename)
             self.logger.info(f'Converted: {output_filename}')
         except Exception as e:
             self.logger.error(f'Failed conversion for series {dicom_series[0]}: {e}')
 
-    def convert(self, input_dir, output_dir):
+    def convert(self, input_dir, output_dir, output_filename=None):
         """
         Converts all valid DICOM series found in the input directory to NIFTI files in the output directory,
         using the directory names as file names.
@@ -85,4 +86,4 @@ class DicomToNiftiConverter:
             os.makedirs(output_dir)
 
         for series in series_paths:
-            self.convert_series_to_nifti(series, output_dir)
+            self.convert_series_to_nifti(series, output_dir, output_filename)
