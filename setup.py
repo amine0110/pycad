@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pycad-medic',
-    version='0.0.10',
+    version='0.0.11',
     author='Mohammed El Amine Mokhtari',
     author_email='mohammed@pycad.co',
     packages=find_packages(),
@@ -28,6 +28,8 @@ setup(
         'pytest-shutil',
         'nibabel==3.2.2',
         'gdown==4.7.1',
+        'highdicom==0.24.0',
+        'rt_utils==1.2.7',
     ],
     entry_points={
         'console_scripts': [

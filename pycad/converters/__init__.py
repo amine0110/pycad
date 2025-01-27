@@ -11,3 +11,5 @@ from .nifti_to_nrrd import NiftiToNrrdConverter
 from .nrrd_to_nifti import NrrdToNiftiConverter
 from .nrrd_to_dicom import NrrdToDicomConverter
 from .dicom_to_nrrd import DicomToNrrdConverter
+from .nifti_to_dicom_seg import NiftiToDicomSeg
+from .nifti_to_dicom_rt import NiftiToDicomRT
