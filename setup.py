@@ -29,6 +29,7 @@ setup(
         'nibabel==3.2.2',
         'gdown==4.7.1',
         'highdicom==0.24.0',
+        'rt_utils==1.2.7',
     ],
     entry_points={
         'console_scripts': [
