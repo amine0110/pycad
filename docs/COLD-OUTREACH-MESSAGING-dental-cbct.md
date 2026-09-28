@@ -7,74 +7,53 @@ Drafts for Nour to review before anything is sent. Nothing here has been sent or
 - Live viewer: https://dental.pycad.co (Google sign-in)
 - Public demo page: https://pycad.co/demos/dental-dicom-viewer/
 - Source brief: Marketer, "ICPs and messaging", 2026-09-28
+- Revision 2: rewritten after Nour's feedback. The emails now sound more like Nour typing, and every touch in a sequence makes the same ask.
 
 Contents
 
-1. Free offers (what to lead with and why)
+1. The one offer
 2. ICP 1 sequence: dental imaging / radiology hubs
 3. ICP 2 sequence: dental teleradiology / remote reading centers
 4. OEM / platform embed (short sequence)
 5. LinkedIn DM variants
 6. Merge fields
 7. Reply snippets for common questions
-8. Do / don't claim checklist
+8. Do / don't claim checklist, voice rules
 9. Personalization tips
-10. Appendix: "Browser CBCT review checklist" (content for the free PDF)
+10. Appendix A: reply tools for after they engage (teardown call, checklist, pilot)
+11. Appendix B: "Browser CBCT review checklist" text
 
 ---
 
-## 1. Free offers
+## 1. The one offer
 
-Four offers, ranked. Each one is something Nour can deliver today with the live viewer and his own time. None of them promise white-label, regulatory paperwork, AI reporting, or anything outside view / measure / share.
+Every cold touch in every sequence asks for the same thing:
 
-### Offer A (primary, Email 1): "Your scan, in a browser, in a private workspace"
+> **Send me one de-identified study. I'll load it into a private workspace on our viewer, free, so you can open your own scan in a browser.**
+> Fallback (same offer, different data): if they can't send a study, I load a sample CBCT into the workspace instead.
 
-The prospect sends one de-identified CBCT (and a pan if they have it). Nour loads it into a private workspace on dental.pycad.co and sends login steps. They open their own study in a browser and judge it on their own data.
+Follow-ups don't add new offers. Each one pushes the same ask from a different angle:
 
-Fallback for anyone who can't send data: the same private workspace with a sample CBCT already loaded.
+| Touch | Same ask, but... |
+|---|---|
+| Email 1 | the ask itself, short |
+| Email 2 | why their *own* scan (every unit exports differently) |
+| Email 3 | lowers the bar: sample case if sending data is the problem |
+| Email 4 | leave the door open, one-word reply, or who else to ask |
 
-Why this leads:
-- It's concrete and specific to them. "Your own scan" beats "a demo" every time.
-- Low effort to say yes: one reply, one file.
-- It qualifies. Someone who sends a study is a real conversation. Someone who asks for the sample case is still warm.
-- It shows the product instead of describing it, which keeps copy short and claim-safe.
+The teardown call, the checklist and the pilot aren't cold CTAs anymore. They live in Appendix A and get used only after someone has replied.
+
+Why this offer:
+- It's about their data. "Your scan in a browser" is more interesting than "a demo".
+- Saying yes takes one reply and one file.
+- It qualifies. Someone who sends a study is a real conversation, and someone who asks for the sample is still warm.
+- The product shows itself, so the emails can stay short and make almost no claims.
 
 Delivery steps for Nour (per prospect):
-1. Ask for a **de-identified** study only. Before uploading, check DICOM tags for anything identifying (PatientName, PatientID, BirthDate, InstitutionName, ReferringPhysicianName). PYCAD's own `DicomAnonymizer` (`docs/preprocessing/dicom_anonymization.md`) can do this if they send something un-scrubbed. If anything identifying arrives, don't upload it; scrub it or ask them to resend.
-2. Upload, then open it yourself: confirm the slices load, the pan and cross-sections render for that study, and measurements behave. If a view doesn't work on their scanner's export, say so honestly in the reply rather than sending a broken link.
-3. Send login steps (Google sign-in; fresh Google accounts work). Offer a 15–20 minute walkthrough, or let them explore on their own.
-4. Only mention sharing if you have tested the share link end to end on a fresh account for that workspace. Otherwise: "happy to walk you through sharing on a short call."
-
-### Offer B (Email 2): Free handoff teardown, 20 minutes
-
-On a call, they show how a scan currently gets from them to the person who needs to look at it (referring dentist for hubs, reader for teleradiology). Nour opens the same kind of study in the browser side by side. They keep the notes whether or not they buy.
-
-Why: it's about their workflow, not our product. It gives people who won't send data a reason to talk. It surfaces the real buying pain (install friction, USB/download handoff, reader setup) in their own words.
-
-### Offer C (Email 3): One-page "Browser CBCT review checklist"
-
-A vendor-neutral, no-pitch checklist of what to check before putting any browser CBCT viewer in front of referring dentists or readers. Content is drafted in the Appendix (section 10). **Only offer it once the PDF exists.** Until then, Email 3 can offer "I'll send you the list" and Nour pastes the text into the reply.
-
-Why: it's a reply-to-receive asset ("want it?"), which gets replies from people who aren't ready to talk. It positions Nour as someone who knows the problem. It's educational and Path A by design.
-
-### Offer D (later, Nour must approve terms): Limited free pilot
-
-Don't use in Email 1. Use only as an optional line in Email 3 or after a reply, once Nour sets the terms. Draft options for Nour to pick from (all numbers are placeholders, nothing is set):
-
-- **D1, study-count pilot:** up to [N] de-identified studies over [N] weeks, free, for [N] of their people. Ends with a 20-minute review call.
-- **D2, one-group pilot (hubs):** one referring clinic or dentist group gets browser access to their scans from the hub for [N] weeks.
-- **D3, reader pilot (teleradiology):** [N] readers open their normal CBCT/pan studies in the viewer for [N] weeks. Reporting stays in their system.
-
-Pilot guardrails: say "free pilot" only once terms are set. Don't promise storage limits, SLAs, uptime, hosting region, or compliance terms inside a pilot offer.
-
-### Offer sequencing
-
-| Touch | Primary offer | Backup inside the same email |
-|---|---|---|
-| Email 1 | A: their scan in a private workspace | A-fallback: sample case login |
-| Email 2 | B: 20-min handoff teardown | demo page link |
-| Email 3 | C: checklist (reply to receive) | [optional] D pilot line, if approved |
-| Email 4 | A restated, one-word reply ("scan") | ask who else owns this |
+1. Ask for a **de-identified** study only. Before uploading, check DICOM tags for anything identifying (PatientName, PatientID, BirthDate, InstitutionName, ReferringPhysicianName). PYCAD's own `DicomAnonymizer` (`docs/preprocessing/dicom_anonymization.md`) can scrub it. If something identifying arrives, don't upload it; scrub it or ask them to resend.
+2. Upload it, then open it yourself: confirm the slices load, the pan and cross-sections render for that study, and measurements behave. If something doesn't work on their scanner's export, tell them straight rather than sending a broken link.
+3. Send login steps (Google sign-in; fresh Google accounts work). Offer to walk them through it if they want; otherwise let them explore.
+4. Only mention sharing if you've tested the share link end to end on a fresh account for that workspace. Otherwise: "happy to walk you through sharing on a short call."
 
 ---
 
@@ -82,155 +61,133 @@ Pilot guardrails: say "free pilot" only once terms are set. Don't promise storag
 
 Who: multi-dentist / multi-clinic imaging centers that take the scan and send it on to referring dentists. Pattern: CIR Brazil.
 
-Pain we speak to: referring dentists get the CBCT on a USB, a download, or a desktop viewer they have to install, and a lot of them don't open it.
+Cadence: Email 1 on day 0. Email 2 three to five business days later. Email 3 about a week after Email 2. Email 4 about a week after that. Send 2–4 as replies in the same thread.
 
-Cadence: Email 1 on day 0. Email 2 three to five business days later. Email 3 seven to ten business days after Email 1. Email 4 about a week after Email 3. Send 2–4 as replies in the same thread unless noted.
-
-Deliverability: no links in Email 1. One link at most in later emails. Plain text, no images, no tracking-heavy signature.
+Deliverability: no links in any of these. The ask is a reply, so a link only adds risk. Plain text, short signature.
 
 ### Email 1 (day 0)
 
-Subject variants:
-- a {{Company}} scan in a browser
-- your referring dentists + CBCT files
-- one of your CBCTs, free workspace
-- quick offer for {{Company}}
-- no install for your referrers
-
-Body:
+Subject variants (lowercase on purpose):
+- your cbct scans in a browser
+- {{Company}} + referring dentists
+- one of your scans
+- quick question
 
 ```
 Hi {{FirstName}},
 
 {{PersonalLine}}
 
-I'm Nour, I run PYCAD. We built a browser viewer for dental CBCT. You open the scan, scroll the slices, look at the pan and cross-sections, take measurements. Nothing to install on the dentist's side.
+I'm Nour, I run PYCAD. We built a CBCT viewer that works in the browser, so a referring dentist can open the scan, go through the slices and the pan, take a measurement, without installing anything.
 
-Here's the offer: send me one de-identified CBCT from {{Company}} and I'll set it up in a private workspace for you, free. You log in, click around on your own scan, and decide if it's worth a conversation.
-
-If you'd rather not send data, I can give you a login with a sample case already loaded.
-
-Want me to set one up?
+Would you send me one de-identified CBCT from {{Company}}? I'll load it into a private workspace for you, free. Easier to judge on your own scan than on my description.
 
 Nour
-Founder, PYCAD
-pycad.co
+PYCAD
 ```
 
-Fallback if you have no `{{PersonalLine}}`: delete the line. Don't replace it with a generic compliment.
+If you have no real `{{PersonalLine}}`, delete the line. Don't fill it with a compliment.
 
-### Email 2 (day 3–5 business days, same thread)
+### Email 2 (3–5 business days, same thread)
 
-Subject variants (only if starting a new thread):
-- how do your referrers open scans?
-- 20 minutes on your scan handoff
-- {{Company}} to referring dentist
-- the step after the scan
-
-Body:
+New-thread subjects if needed: "your scans, again" / "re: cbct in the browser"
 
 ```
 Hi {{FirstName}},
 
-Different angle, in case sending a scan is a step too far right now.
+Bumping this in case it got buried.
 
-When a referring dentist gets a CBCT from {{Company}} today, how do they open it?
+The reason I ask for one of your scans instead of just sending a demo: every CBCT unit exports a bit differently, and if our viewer has trouble with your files you should find that out on day one, not after a sales call.
 
-If you're up for 20 minutes, show me how a scan gets from you to a referring dentist, and I'll open the same kind of case in the browser next to it. You keep the notes either way. No slides.
-
-This is what the viewer looks like, if you want to see it first:
-https://pycad.co/demos/dental-dicom-viewer/
+Any de-identified case is fine. I set it up myself.
 
 Nour
 ```
 
-### Email 3 (day 7–10 business days after Email 1, same thread)
+### Email 3 (about a week after Email 2, same thread)
 
-Subject variants (new thread only):
-- checklist for browser CBCT review
-- what to check before your referrers use a web viewer
-- a one-page list for {{Company}}
-- before you pick a CBCT viewer
-
-Body:
+New-thread subjects if needed: "sample case instead?" / "no scan needed"
 
 ```
 Hi {{FirstName}},
 
-I put together a one-page checklist for imaging centers thinking about browser CBCT review for their referring dentists. What to test before rolling it out: which views you need, how measurements are calibrated, how sharing and access work, where the data lives.
+If sending a patient scan out is the hassle here (fair enough, even anonymized), I can load a sample CBCT into the workspace instead and send you the login.
 
-It's vendor-neutral. No pitch inside, our viewer isn't in it.
-
-Want me to send it?
+Not the same as seeing your own, but you'd get a feel for it in a few minutes. Want that?
 
 Nour
-```
-
-Optional line, add only after Nour approves pilot terms (see Offer D). Place before the sign-off:
-
-```
-And if you'd rather test with real cases, I can open a free pilot for one of your referring clinics for [N] weeks.
 ```
 
 ### Email 4, break-up (about a week after Email 3, same thread)
 
-Subject variants (new thread only):
-- closing the loop
-- last one from me
-- should I stop?
-
-Body:
+New-thread subjects if needed: "leaving this here" / "last one"
 
 ```
 Hi {{FirstName}},
 
-I'll stop here so I'm not filling your inbox.
+I'll stop here.
 
-If browser review for your referring dentists comes up later, the offer stands: one de-identified scan, a private workspace, free. Reply "scan" and I'll set it up.
+If you want to see a {{Company}} scan in the browser at some point, just reply "scan" and I'll set it up. Or if someone else looks after how your referring dentists get their images, a name would help.
 
-And if someone else at {{Company}} handles this, I'd be grateful for their name.
-
+Thanks,
 Nour
 ```
 
-### PT-BR adaptation for Brazilian hubs (Email 1 and break-up)
+### PT-BR version for Brazilian hubs
 
-Get a native speaker to check this before sending. Don't say or imply that the viewer interface is in Portuguese.
+Same four touches, same ask. Get a native speaker to check before sending. Don't imply the viewer interface is in Portuguese.
 
-Email 1, subject variants:
-- uma tomografia da {{Company}} no navegador
-- seus dentistas parceiros + arquivos de CBCT
-- proposta rápida para a {{Company}}
+Email 1. Subjects: "suas tomografias no navegador" / "{{Company}} + dentistas parceiros" / "uma pergunta rápida"
 
 ```
 Olá {{FirstName}},
 
 {{PersonalLine}}
 
-Sou o Nour, fundador da PYCAD. Fizemos um visualizador de tomografia odontológica (CBCT) que roda no navegador. Você abre o exame, navega pelos cortes, vê a panorâmica e os cortes transversais, faz medições. O dentista não precisa instalar nada.
+Sou o Nour, da PYCAD. A gente fez um visualizador de tomografia (CBCT) que roda no navegador. O dentista parceiro abre o exame, passa pelos cortes e pela panorâmica, faz uma medição, sem instalar nada.
 
-A proposta: me envie uma tomografia anonimizada da {{Company}} e eu monto um espaço privado para vocês, sem custo. Vocês entram, testam com o próprio exame e decidem se vale uma conversa.
-
-Se preferir não enviar dados, posso liberar um acesso com um caso de exemplo já carregado.
-
-Quer que eu prepare?
+Você me mandaria uma tomografia anonimizada da {{Company}}? Eu coloco num espaço privado pra vocês, sem custo. É mais fácil avaliar com um exame de vocês do que pela minha descrição.
 
 Nour
-Fundador, PYCAD
-pycad.co
+PYCAD
 ```
 
-Break-up:
+Email 2:
 
 ```
 Olá {{FirstName}},
 
-Vou parar por aqui para não lotar sua caixa de entrada.
+Voltando nesse assunto caso tenha se perdido.
 
-Se a visualização no navegador para seus dentistas parceiros voltar a ser assunto, a proposta continua de pé: uma tomografia anonimizada, um espaço privado, sem custo. É só responder "exame" que eu preparo.
+Peço um exame de vocês em vez de só mandar uma demo porque cada tomógrafo exporta de um jeito um pouco diferente. Se o nosso visualizador tiver problema com os arquivos de vocês, melhor saber logo de cara.
 
-E se outra pessoa na {{Company}} cuida disso, agradeço se puder me indicar.
+Qualquer caso anonimizado serve. Eu mesmo configuro.
 
+Nour
+```
+
+Email 3:
+
+```
+Olá {{FirstName}},
+
+Se o problema é enviar exame de paciente (entendo, mesmo anonimizado), posso colocar uma tomografia de exemplo no espaço e te mandar o acesso.
+
+Não é igual a ver um exame de vocês, mas em poucos minutos dá pra ter uma ideia. Quer?
+
+Nour
+```
+
+Email 4:
+
+```
+Olá {{FirstName}},
+
+Vou parar por aqui.
+
+Se em algum momento quiser ver um exame da {{Company}} no navegador, é só responder "exame" que eu preparo. E se outra pessoa cuida de como os dentistas parceiros recebem as imagens, me indica?
+
+Obrigado,
 Nour
 ```
 
@@ -240,111 +197,75 @@ Nour
 
 Who: remote CBCT and dental reading services with radiologists reading at volume. Pattern: Diagnoshare / OMF radiology practices.
 
-What they told us (Diagnoshare): they want CBCT and pan viewing, not implant planning. Reading and reporting are their job, and they don't want AI replacing the radiologist's report. The copy repeats that back to them. Being clear about what the viewer doesn't do is the hook here.
+What they told us (Diagnoshare): they want CBCT and pan viewing, not implant planning. Reading and reporting are their job, and they don't want AI replacing the radiologist's report. Email 1 repeats that back in plain words.
+
+Wording rule for this ICP: "open", "view", "go through", "measure". Never "diagnose", "diagnostic", or anything suggesting the viewer takes part in the report.
 
 Cadence and deliverability: same as ICP 1.
-
-Wording rule for this ICP: say "open", "view", "review", "measure". Don't say "diagnose", "diagnostic", "read for diagnosis", or anything about the viewer's role in the report.
 
 ### Email 1 (day 0)
 
 Subject variants:
-- CBCT + pan in a browser, nothing else
-- a viewer for {{Company}}'s readers
-- your reports stay yours
-- one study, private workspace, free
-- for your reading team
-
-Body:
+- cbct + pan viewer, nothing else
+- viewer for your readers
+- one of your studies
+- quick question
 
 ```
 Hi {{FirstName}},
 
 {{PersonalLine}}
 
-I'm Nour, founder of PYCAD. We make a browser viewer for dental CBCT and panoramic images. Open the study, scroll the slices, cross-sections, measure. That's the whole scope.
+I'm Nour from PYCAD. We make a browser viewer for dental CBCT and pans. It's just a viewer. You go through the volume, cross-sections, measure. There's no implant planning in it and it doesn't write reports. Your radiologists read and report exactly the way they do now.
 
-No implant planning module. No AI writing reports. Reading and reporting stay with your radiologists, which I think is how it should be.
-
-The offer: send me one de-identified study and I'll set it up in a private workspace for your team, free. One of your readers opens it in a browser and tells me what's missing. If you can't send data, I'll give you a login with a sample case instead.
-
-Worth setting up?
+Could you send me one de-identified study? I'll put it in a private workspace for your team, free, and one of your readers can open it in a browser and tell me what's missing.
 
 Nour
-Founder, PYCAD
-pycad.co
+PYCAD
 ```
 
-### Email 2 (day 3–5 business days, same thread)
+### Email 2 (3–5 business days, same thread)
 
-Subject variants (new thread only):
-- opening CBCTs at volume
-- 15 minutes, one of your studies
-- where your readers lose time
-- {{Company}} reader setup
-
-Body:
+New-thread subjects if needed: "one study" / "re: cbct viewer"
 
 ```
 Hi {{FirstName}},
 
-Quick follow-up with a different offer.
+Following up on this.
 
-When your readers work through a queue of CBCTs, the time spent getting each study open (download, import, a desktop app per machine) adds up before anyone reads anything.
+What I'd really like is for one of your readers to open a real study from your queue in the browser and tell me if it's quicker or slower than what they use now. That's hard to judge from a demo with a clean sample, and it's the only opinion that matters.
 
-If you have 15 minutes, share your screen and open one study the way your team does today. Then open the same type of study in our viewer. You drive, I watch where it slows you down. Useful for you even if we never work together.
-
-What it looks like:
-https://pycad.co/demos/dental-dicom-viewer/
+Still happy to set it up, free. Any de-identified CBCT or pan.
 
 Nour
 ```
 
-### Email 3 (day 7–10 business days after Email 1, same thread)
+### Email 3 (about a week after Email 2, same thread)
 
-Subject variants (new thread only):
-- checklist for a reader-side CBCT viewer
-- what your readers should test first
-- one-page list for {{Company}}
-
-Body:
+New-thread subjects if needed: "sample case instead?" / "no data needed"
 
 ```
 Hi {{FirstName}},
 
-I wrote a one-page checklist for reading centers looking at browser CBCT viewers: which views your readers need, how measurements are calibrated, what happens with large studies, how access and sharing work, where the data sits, and how to keep reporting fully in your own system.
+I know sending studies out isn't simple, even de-identified.
 
-It's vendor-neutral, not a brochure.
-
-Want a copy?
+If that's what's in the way, I can set up the workspace with a sample CBCT instead and your readers can look at it whenever they have a minute. Want the login?
 
 Nour
-```
-
-Optional line, add only after Nour approves pilot terms (see Offer D3). Place before the sign-off:
-
-```
-If it's easier to judge on real work, I can set up a free pilot for [N] of your readers for [N] weeks. Reporting stays in your system the whole time.
 ```
 
 ### Email 4, break-up (about a week after Email 3, same thread)
 
-Subject variants (new thread only):
-- closing the loop
-- last note on CBCT viewing
-- should I stop?
-
-Body:
+New-thread subjects if needed: "leaving this here" / "last one"
 
 ```
 Hi {{FirstName}},
 
-Last one from me.
+Last note from me.
 
-If a simpler way for your readers to open CBCT and pan studies ever comes up, reply "study" and I'll set up a private workspace with one of your de-identified cases. Free, no call required.
+If you want to try it on one of your studies later, reply "study" and I'll set it up. And if someone else at {{Company}} looks after the tools your readers use, I'd appreciate the name.
 
-If someone else runs reader tools at {{Company}}, a name would help a lot.
-
+Thanks,
 Nour
 ```
 
@@ -352,33 +273,25 @@ Nour
 
 ## 4. OEM / platform embed (short sequence)
 
-Who: dental software platforms that might license a viewer to put inside their product (SKU B pattern). Fewer accounts, bigger deals, so write each one by hand. A direct call CTA is fine here because these are buyers with intent.
+Who: dental software platforms that might license a viewer to put inside their product (SKU B pattern). Few accounts, big deals, so edit each one by hand.
 
-Don't mention pricing in email. Don't describe an SDK, API, or embed method as shipped. Talk about the viewer and offer a technical conversation.
+Same idea as the other sequences: one ask (one exported study from their platform, loaded into a private workspace). Hold the technical and licensing call until they reply. Don't mention pricing, and don't describe an SDK, API or embed method as shipped.
 
 ### OEM Email 1
 
-Subject variants:
-- CBCT viewing inside {{Company}}
-- a browser CBCT viewer for {{Company}}'s users
-- licensing a dental DICOM viewer
+Subjects: "cbct viewer inside {{Company}}" / "one of your exports" / "quick question"
 
 ```
 Hi {{FirstName}},
 
 {{PersonalLine}}
 
-I'm Nour, founder of PYCAD. We built a browser viewer for dental CBCT: slices, pan, cross-sections, measurements, sharing. We license it to platforms that would rather not build and maintain a viewer themselves.
+I'm Nour, founder of PYCAD. We built a browser viewer for dental CBCT and we license it to platforms that would rather not build and maintain one themselves.
 
-Two ways to look at it, both free:
-1. Send me one de-identified study exported from {{Company}} and I'll load it in a private workspace so your team can judge the viewer on your own data.
-2. A 30-minute technical call with me on how it could sit inside your product, and straight answers on licensing.
-
-Which is more useful?
+Would you send me one de-identified study exported from {{Company}}? I'll load it into a private workspace so your team can judge the viewer on your own data. Free, and if it goes well we can talk licensing after.
 
 Nour
-Founder, PYCAD
-pycad.co
+PYCAD
 ```
 
 ### OEM Email 2 (4–6 business days, same thread)
@@ -386,12 +299,7 @@ pycad.co
 ```
 Hi {{FirstName}},
 
-One thing I'd ask any viewer vendor, including us: does it open the files your users actually have, from the scanners they actually use?
-
-Easiest way to find out is one exported study from {{Company}}. I'll load it and tell you honestly what works and what doesn't.
-
-Demo, if you'd like a look first:
-https://pycad.co/demos/dental-dicom-viewer/
+Bumping this. The first thing I'd check with any viewer vendor, us included, is whether it opens the files your users actually have. One exported study answers that, and I'll tell you honestly what works and what doesn't.
 
 Nour
 ```
@@ -401,7 +309,7 @@ Nour
 ```
 Hi {{FirstName}},
 
-I'll leave it here. If a built-in CBCT viewer lands on the {{Company}} roadmap, reply and I'll set up a workspace with one of your exported studies.
+I'll leave it here. If a built-in CBCT viewer ends up on the {{Company}} roadmap, send me an export and I'll set up the workspace.
 
 Nour
 ```
@@ -410,26 +318,26 @@ Nour
 
 ## 5. LinkedIn DM variants
 
-Connection notes must be under 300 characters. No links in the connection note.
+Same single offer as the emails. Connection notes under 300 characters, no links.
 
 ### ICP 1: hubs
 
 Connection note:
 
 ```
-Hi {{FirstName}}, I'm Nour, founder of PYCAD. We built a browser viewer for dental CBCT so referring dentists don't have to install anything. Would like to connect.
+Hi {{FirstName}}, Nour from PYCAD here. We built a browser CBCT viewer for referring dentists, nothing to install. Would be good to connect.
 ```
 
 After they accept:
 
 ```
-Thanks for connecting, {{FirstName}}. Straight offer: send me one de-identified CBCT from {{Company}} and I'll set it up in a private browser workspace for you, free. You try it on your own scan. Interested?
+Thanks for connecting {{FirstName}}. If you're up for it, send me one de-identified CBCT from {{Company}} and I'll load it into a private workspace for you, free. Easier to judge on your own scan.
 ```
 
 Follow-up (about 5 business days, no reply):
 
 ```
-Or if sending a scan is too much, I can give you a login with a sample case loaded. Takes you two minutes to see if it's relevant.
+If sending a scan is a pain I can load a sample case instead and send you the login.
 ```
 
 ### ICP 2: teleradiology
@@ -437,19 +345,19 @@ Or if sending a scan is too much, I can give you a login with a sample case load
 Connection note:
 
 ```
-Hi {{FirstName}}, Nour here, founder of PYCAD. We make a browser viewer for dental CBCT and pan. No implant planning, no AI reports, just viewing and measuring. Happy to connect.
+Hi {{FirstName}}, Nour from PYCAD. We make a browser viewer for dental CBCT and pans. Just a viewer, no implant planning, no AI reports. Would be good to connect.
 ```
 
 After they accept:
 
 ```
-Thanks, {{FirstName}}. If it's useful: send one de-identified study and I'll set up a private workspace so one of your readers can open it in a browser and tell me what's missing. Free. Reporting stays entirely with you.
+Thanks {{FirstName}}. If it's useful, send one de-identified study and I'll put it in a private workspace so one of your readers can open it in a browser and tell me what's missing. Free. Reporting stays with you.
 ```
 
 Follow-up:
 
 ```
-No pressure. If a 15-minute screen share on one of your studies is easier, I'm happy to do that instead.
+If sending studies out is the issue, I can load a sample CBCT instead. Happy to send the login.
 ```
 
 ### OEM
@@ -463,7 +371,7 @@ Hi {{FirstName}}, I'm Nour, founder of PYCAD. We license a browser dental CBCT v
 After they accept:
 
 ```
-Thanks for connecting. If a CBCT viewer inside {{Company}} is ever on the table, I'll load one of your exported studies into a private workspace so your team can judge it on real data. Free.
+Thanks for connecting. If a CBCT viewer inside {{Company}} is ever on the table, send me one exported study and I'll load it into a private workspace so your team can judge it on real data. Free.
 ```
 
 ---
@@ -472,17 +380,21 @@ Thanks for connecting. If a CBCT viewer inside {{Company}} is ever on the table,
 
 | Field | What goes in it | Fallback if empty |
 |---|---|---|
-| `{{FirstName}}` | First name only | "Hi there," (better: don't send) |
+| `{{FirstName}}` | First name only | Don't send |
 | `{{Company}}` | Short, spoken company name ("CIR", not "CIR Centro de Imagem Radiológica Ltda.") | "your team" |
-| `{{Role}}` | Their title. Used to choose the ICP and angle, not pasted into copy. | n/a |
+| `{{Role}}` | Their title. Used to choose the ICP, not pasted into copy. | n/a |
 | `{{PersonalLine}}` | One true, specific sentence about them (see section 9) | Delete the line |
 | `{{Country}}` | Decides EN vs PT-BR version and whether hosting questions are likely | n/a |
 | `{{ScannerHint}}` | Scanner brand/model if public. Use only in a hand-written reply, never in the template body. | n/a |
-| `{{CurrentHandoff}}` | How they deliver scans today, if known (portal, download, USB). Use only in a hand-written `{{PersonalLine}}`. | n/a |
+| `{{CurrentHandoff}}` | How they deliver scans today, if known (portal, download, USB). Use only inside a hand-written `{{PersonalLine}}`. | n/a |
 
 Rules:
 - Never send with a broken or empty merge tag. Preview every row.
-- `{{PersonalLine}}` has to be something a human noticed: a post they wrote, a new location, a service page, a talk. Not "I love what you're doing at {{Company}}."
+- `{{PersonalLine}}` has to be something a person actually noticed. Examples of the right register:
+  - "Saw you opened a second unit in Campinas."
+  - "Your site says results go out as a download with a viewer, which is partly why I'm writing."
+  - "Read your post about CBCT referrals from general dentists."
+- Not: "I love what you're doing at {{Company}}."
 
 ---
 
@@ -552,18 +464,18 @@ Nour answers these personally. No template, no compliance claims in writing unti
 
 ---
 
-## 8. Do / don't claim checklist
+## 8. Do / don't claim checklist, voice rules
 
 Run every email, DM and reply through this before sending.
 
 ### Do say
 
 - Browser viewer for dental CBCT (and pan)
-- View, scroll slices, panoramic, cross-sections, measure
+- Slices, panoramic, cross-sections, measure
 - Share with a referring dentist or colleague, but soft: "happy to walk you through sharing on a short call" until share is tested end to end on a fresh account
 - Nothing to install; Google sign-in
 - Reading and reporting stay with your team
-- No implant planning module (for ICP 2 this is a selling point)
+- No implant planning module (a selling point for ICP 2)
 - Free private workspace with their de-identified study or a sample case
 - De-identified data only
 - Hosting is Google Cloud US (us-central1). Only say this when asked, and always honestly.
@@ -584,28 +496,71 @@ Run every email, DM and reply through this before sending.
 - Any competitor or other product name (viewers, DICOM libraries, portals)
 - The Diagnoshare call date or any other prospect's details
 
-### Voice check
+### One-offer rule
 
-- First person, Nour. Short sentences. One ask per email.
-- Cut on sight: "I hope this finds you well", "leverage", "cutting-edge", "game-changer", "delve", "seamless", "streamline", "robust", "unlock", "empower", "revolutionize", "state-of-the-art", "just checking in", "circling back", "touching base".
-- No bullet lists, bold or emojis in cold emails. No fake "Re:" subjects.
-- If a sentence would fit any company's cold email, delete it.
+- Every cold touch asks for the same thing: one de-identified study into a private workspace, with the sample case as the fallback.
+- A follow-up never introduces a new offer, asset, call type or pilot.
+- The teardown call, checklist and pilot are only used after a reply (Appendix A).
+
+### Voice rules (so it reads like Nour, not a template)
+
+- Write it the way you'd type a quick email to someone you respect but don't know. Contractions. Plain words.
+- Keep lengths uneven. Email 1 can be 80–100 words; the follow-ups get shorter. Not every email needs the same structure.
+- One question per email, near the end.
+- No neat three-part lists ("fast, simple, secure"), no "Here's the offer:" or "The short version:" lead-ins, no punchy fragment chains ("No slides. No pitch. Just…").
+- No bullets, bold, emojis or links in cold emails. No fake "Re:" subjects.
+- Subjects are lowercase and plain, like something typed quickly.
+- Cut on sight: "I hope this finds you well", "leverage", "cutting-edge", "game-changer", "delve", "seamless", "streamline", "robust", "unlock", "empower", "revolutionize", "state-of-the-art", "just checking in", "circling back", "touching base", "I'd love to", "at your convenience".
+- If a sentence could go in any company's cold email, delete it.
+- Read it out loud. If Nour wouldn't say it to someone across a table, rewrite it.
 
 ---
 
 ## 9. Personalization tips
 
-**ICP 1, hubs.** Look at their site for how they deliver results to dentists (a portal login, "download your exam", a viewer to install, "we deliver on USB"). Reference that in one line: "Saw that {{Company}} sends CBCTs to dentists as a download with a viewer." Also worth a line: number of locations, a new unit opening, or a scanner upgrade they announced.
+**ICP 1, hubs.** Check their site for how results reach dentists (a portal login, "download your exam", a viewer to install, "delivered on USB"). One line about that is the best `{{PersonalLine}}`. Second best: a new location or a scanner upgrade they announced.
 
-**ICP 2, teleradiology.** Anchor on their scope and their radiologists. Mention a reader by name if they post about cases, their turnaround promise, or that they read CBCT for referring general dentists. Put the "reporting stays yours" line near the top for anyone who has posted skepticism about AI reporting.
+**ICP 2, teleradiology.** Anchor on their scope and their radiologists. Mention a reader who posts cases, their turnaround promise, or who they read for (general dentists, oral surgeons). If they've posted skepticism about AI reporting, their Email 1 already covers it with "doesn't write reports".
 
-**OEM.** Name the specific place in their product where a CBCT viewer would sit (patient record, case sharing, treatment view). One sentence showing you used their product is worth more than a paragraph about ours.
+**OEM.** Name the specific place in their product where a CBCT viewer would sit (patient record, case sharing, treatment view). One sentence showing you actually used their product beats anything about ours.
 
 ---
 
-## 10. Appendix: "Browser CBCT review checklist" (content for the free PDF)
+## 10. Appendix A: reply tools for after they engage
 
-Draft text for Offer C. Vendor-neutral, and PYCAD isn't mentioned in the body. Nour to review and turn into a one-page PDF before offering it as an attachment. Until then, paste the text into a reply.
+These are **not** cold CTAs. Use them only in a reply thread, once a prospect has answered, and only when they fit what the person said.
+
+**Handoff teardown call (20 min).** For a hub that replies with "interesting, but how would our dentists use it?" They show how a scan gets from them to a referring dentist today, and Nour opens the same kind of study in the browser next to it. Reply line:
+
+```
+Happy to show you on a call. Share your screen and walk me through how a dentist gets a scan from you today, and I'll open the same kind of case in the browser next to it. 20 minutes.
+```
+
+**Reader screen share (15 min).** The ICP 2 version, for a reading center that replies but still won't send data. Reply line:
+
+```
+If it's easier, we can do it live. One of your readers shares their screen and opens a study the usual way, then opens the sample in our viewer. 15 minutes.
+```
+
+**Browser CBCT review checklist.** For a prospect who says they're comparing viewers or "not ready yet". Send the text from Appendix B (or the PDF once it exists). Reply line:
+
+```
+Makes sense. I wrote a one-page list of what to test in any browser CBCT viewer before rolling it out. It doesn't mention us. Pasting it below in case it helps.
+```
+
+**Free pilot (Nour must set terms first).** Only for a prospect who has already opened a workspace and wants to try it on real work. Draft shapes for Nour to pick from (all numbers are placeholders, nothing is set):
+
+- Study-count pilot: up to [N] de-identified studies over [N] weeks, for [N] of their people, ending with a short review call.
+- One-group pilot (hubs): one referring clinic or dentist group gets browser access to their scans from the hub for [N] weeks.
+- Reader pilot (teleradiology): [N] readers open their normal CBCT/pan studies in the viewer for [N] weeks. Reporting stays in their system.
+
+Pilot guardrails: say "free pilot" only once terms are set. Don't promise storage limits, SLAs, uptime, hosting region or compliance terms inside a pilot.
+
+---
+
+## 11. Appendix B: "Browser CBCT review checklist" text
+
+Draft text for the checklist in Appendix A. Vendor-neutral, and PYCAD isn't mentioned in the body. Nour to review and turn into a one-page PDF. Until then, paste the text into a reply.
 
 ---
 
